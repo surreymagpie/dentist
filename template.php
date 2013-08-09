@@ -1,6 +1,6 @@
 <?php 
 // remove width and height attributes from images
-function themer_preprocess_image(&$variables) {
+function dentist_preprocess_image(&$variables) {
   $attributes = &$variables['attributes'];
 
   foreach (array('width', 'height') as $key) {
@@ -9,7 +9,7 @@ function themer_preprocess_image(&$variables) {
   }
 }
 // determine which column layout to use
-function themer_preprocess_page(&$variables) {
+function dentist_preprocess_page(&$variables) {
 	$page = $variables['page'];
 
 if ($page['sidebar_left'] && $page['sidebar_right']) :

@@ -2,5 +2,60 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+$headers: "PT Sans", verdana, arial, san-serif;
+$hcolor: yellow;
+$body: "PT Serif", Georgia, Times, serif;
+
 
 @import "compass/reset";
+//universal rules
+
+body {  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #333333;
+  font-family: $body;
+  font-size: 100%;
+  line-height: 1.25em;
+  }
+h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-family: $headers;
+  color: $hcolor;
+}  
+  
+#container {
+  padding: 0 1em;
+  }
+#header,
+#nav,
+#main-content {
+  background: white;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  }
+
+//small screens
+@media only screen and (max-width: 480px) {
+  #container {
+    width: 100%;
+
+  }
+}
+
+//medium screens
+@media only screen and (min-width: 481px)and (max-width: 768px) {
+  
+}
+
+// desktop screens
+@media only screen and (min-width: 769px)and (max-width: 1440px) {
+  #container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
