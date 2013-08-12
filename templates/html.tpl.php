@@ -11,6 +11,7 @@
 
 		<link rel="shortcut icon" href="favicon.ico" />
 		<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,700' rel='stylesheet' type='text/css'>
 		<title><?php print $head_title; ?></title>
 		<?php print $head; ?>
 		<?php print $styles; ?>

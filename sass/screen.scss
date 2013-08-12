@@ -2,54 +2,228 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-$headers: "PT Sans", verdana, arial, san-serif;
-$hcolor: yellow;
-$body: "PT Serif", Georgia, Times, serif;
+$headers: "PT Serif", Georgia, Times, serif;
+$hcolor: #FFCF33;
+$body: "PT Sans", Verdana, Arial, san-serif;
+$textColor: #666666;
+
+//mixins
+@mixin lists {
+  margin: 0;
+  padding: 1em;
+  list-style: none;
+  display: inline-block;
+}
 
 
 @import "compass/reset";
+@import "compass/utilities/general";
 //universal rules
-
-body {  
+* {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+body { 
+  -webkit-animation: bugfix infinite 1s;
+  *zoom: 1; 
   background: #333333;
   font-family: $body;
+  font-weight: 300;
   font-size: 100%;
   line-height: 1.25em;
+  color: $textColor;
   }
-h1 {
-  font-size: 2em;
-  margin-bottom: 0.5em;
+@-webkit-keyframes bugfix { 
+  from { padding: 0; } 
+  to { padding: 0; } 
+}
+p {
+  margin: 0.5em 0;
+  text-align: justify;
+}
+#{headers(all)} {
   font-family: $headers;
   color: $hcolor;
+  padding-bottom: 0.5em;
+  line-height: 1.5em;
+}
+h1 {font-size: 2em;}
+h2 {font-size: 1.5em;}
+h3 {font-size: 1.25em;}
+h4 {font-size: 1em;}
+
+ 
+a {
+  color: $textColor;
+  text-decoration: none;
+  &:hover, &:focus {
+    outline: thin dotted;
+  }
+}
+#main-content {
+  width: 100%;
+  background: white;
 }  
-  
-#container {
-  padding: 0 1em;
+#content,
+#sidebar_left,
+#sidebar_right {
+  background: white;
+  padding: 0 0.5em;
   }
 #header,
-#nav,
-#main-content {
+#nav {
+  @include clearfix;
   background: white;
+  padding: 0 0.5em;
+}
+#footer {
+  padding: 0 0.5em;
+}
+#logo {
+  float: left;
+  max-width: 80%;
+}
+#site-slogan {
+  float: right;
+  text-align: right;
+  position: relative;
+}
+#breadcrumb {
+  display: none;
 }
 img {
   max-width: 100%;
   height: auto;
   }
-
+div.messages {
+  margin: 0;
+}
+.submitted .user-picture img {
+  float: left;
+  height: 2em;
+  margin-right: 0.25em 0.5em 0 0;
+}
+.field-content > img {
+  float: left;
+  height: auto;
+  margin: 0 0.5em 0.5em 0;
+  max-width: 35%;
+}
+span.author img {
+  float: left;
+  height: 1em;
+}
+.views-row {
+  clear: both;
+  overflow: hidden;
+}
+ul.menu {
+  li {
+    @include lists;
+    &.leaf {   
+    }
+  }
+}
+ul.team-member {
+  text-align: center;
+  li.staffpage {
+    display: inline-block;
+    width: 20em;
+    p {
+      text-align: center;
+    }
+  }
+}
+#block-search-form {
+  float: right;
+  padding: 0.5em;
+}
+input#menu {
+  visibility: hidden;
+  position: absolute;
+}
 //small screens
 @media only screen and (max-width: 480px) {
-  #container {
+  #container,
+  #content,
+  #sidebar_left,
+  #sidebar_left,
+  #copy,
+  #footer-links {
     width: 100%;
-
   }
+  #site-slogan,
+  #user {
+    display: none;
+  }
+  label[for="menu"]:after {
+    content: "\2261";
+    font-size: 48px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+  }
+}
+#nav {
+  max-height: 0;
+  background: #333;
+  -webkit-transition: height 0.5s linear;
+  -moz-transition: height 0.5s linear;
+  -ms-transition: height 0.5s linear;
+  -o-transition: height 0.5s linear;
+  transition: height 0.5s linear;
+  ul.menu {
+    li.leaf {
+      display: block;
+      float: left;
+      width: 50%;
+      a {
+        color: #fff;
+      }
+    }
+    
+  }
+ }
+ input#menu:checked ~ div#nav {
+  max-height: 100%;
+  -webkit-transition: height 0.5s linear;
+  -moz-transition: height 0.5s linear;
+  -ms-transition: height 0.5s linear;
+  -o-transition: height 0.5s linear;
+  transition: height 0.5s linear;
 }
 
 //medium screens
-@media only screen and (min-width: 481px)and (max-width: 768px) {
-  
+@media only screen and (min-width: 481px) {
+  #site-slogan,
+  #user {
+    display: block;
+  }
+  #content {
+    width: 100%;
+    clear: both;
+    }
+  ul.menu {
+      li.leaf {
+        @include lists;
+      }
+    }
+    #nav {
+      background: white;
+    ul.menu li.leaf {
+      @include lists;
+      float: none;
+      width: auto;
+      border: 2px solid $hcolor;
+      border-radius: 5px;
+      background: lighten($hcolor, 20%);
+      a {
+        color: #000;
+      }
+    }
+  }
 }
 
 // desktop screens
@@ -57,5 +231,55 @@ img {
   #container {
     width: 80%;
     margin: 0 auto;
+  }
+  #site-slogan {
+      top: 1em;
+  }
+  #main-content {
+    position: relative;
+    overflow: hidden;
+  }
+  #content{
+    float: left;
+    position: relative;
+    &.right-sidebar {
+      width: 75%;
+    }
+    &.left-sidebar {
+      width: 75%;
+      left: 25%;
+    }
+    &.two-sidebar {
+      width: 50%;
+      left: 25%;
+    }
+  }
+  #sidebar_left {
+    float: left;
+    position: relative;
+    width: 25%;
+    &.left-sidebar {
+      left: -75%;
+    }
+    &.two-sidebar {
+      left: -50%;
+    }
+  }
+  #sidebar_right {
+    float: left;
+    position: relative;
+    width: 25%;
+  }
+  #copy {
+    float: left;
+    width: 66.67%;
+  }
+  #footer-links {
+    float: left;
+    width: 33.33%;
+  }
+  #block-search-form {
+    position: relative;
+    top: -3em;
   }
 }
