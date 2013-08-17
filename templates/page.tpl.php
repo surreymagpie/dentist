@@ -36,13 +36,15 @@
         </div>
     <?php endif; ?>
 
-    <?php print $messages; ?> <!-- status and error messages appear here -->
+    <?php print $messages; ?><!-- status and error messages appear here -->
 
+    
+	<?php if($page['highlighted']): ?><div id="highlighted">
+    <?php print render($page['highlighted']); ?></div>
+    <?php endif; ?>
+    
 <div id="main-content" >
      <div id="content" class="<?php print $content_class; ?>">
-        <?php if($page['highlighted']): ?><div id="highlighted">
-        <?php print render($page['highlighted']); ?></div>
-        <?php endif; ?>
 
         <?php print render($title_prefix); ?>
 
