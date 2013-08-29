@@ -1,0 +1,27 @@
+$headers: "PT Serif", Georgia, Times, serif;
+$hcolor: #FFCF33;
+$body: "PT Sans", Verdana, Arial, san-serif;
+$textColor: #666666;
+$crumbs: #5090f0;
+
+//mixins
+@mixin lists {
+  margin: 0;
+  padding: 1em;
+  list-style: none;
+  display: inline-block;
+}
+
+
+@mixin breadcrumbs{
+  content: ' ';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  left: 100%;
+  top: 50%;
+  margin-top: -50px;
+}

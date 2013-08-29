@@ -17,5 +17,6 @@ regions[sidebar_right] = Right Sidebar
 
 stylesheets[all][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
+scripts[] = scripts/dentist.js
 
 screenshot = screenshot.png

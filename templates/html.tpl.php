@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
@@ -11,12 +11,12 @@
 
 		<link rel="shortcut icon" href="favicon.ico" />
 		<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,700' rel='stylesheet' type='text/css' />
 		<title><?php print $head_title; ?></title>
 		<?php print $head; ?>
 		<?php print $styles; ?>
  		<?php print $scripts; ?>
-	</head>
+ 		</head>
 	<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
 		<div id="skip-link">
 			<a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>

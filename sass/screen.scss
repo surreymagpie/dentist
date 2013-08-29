@@ -7,14 +7,9 @@ $hcolor: #FFCF33;
 $body: "PT Sans", Verdana, Arial, san-serif;
 $textColor: #666666;
 $crumbs: #5090f0; //base color of breadcrumb arrows
-
+$sidebar: #f3f3f3;
 //mixins
-@mixin lists {
-  margin: 0;
-  padding: 1em;
-  list-style: none;
-  display: inline-block;
-}
+
 @mixin breadcrumbs{
   content: ' ';
   display: block;
@@ -30,6 +25,7 @@ $crumbs: #5090f0; //base color of breadcrumb arrows
 
 
 @import "compass/reset";
+@import "compass/css3";
 @import "compass/utilities/general";
 //universal rules
 * {
@@ -40,7 +36,7 @@ $crumbs: #5090f0; //base color of breadcrumb arrows
 body { 
   -webkit-animation: bugfix infinite 1s;
   *zoom: 1; 
-  background: #333333;
+  background: #555555;
   font-family: $body;
   font-weight: 300;
   font-size: 100%;
@@ -65,6 +61,27 @@ h1 {font-size: 2em;}
 h2 {font-size: 1.5em;}
 h3 {font-size: 1.25em;}
 h4 {font-size: 1em;}
+strong {font-weight: bold;}
+em {font-style: italic;}
+
+//generalised menu styles
+ul.menu {
+  margin: 0;
+  padding: 0;
+  li.leaf,
+  li.expanded {
+    list-style: none;
+    display: inline;
+    a {
+      display: inline-block;
+      padding: 1em;
+      &.active-trail {
+        color: #000;
+      }
+    }
+  }
+}
+
 
  
 a {
@@ -75,32 +92,43 @@ a {
     outline: thin dotted;
   }
 }
-#main-content {
+.container {
   width: 100%;
-  background: white;
-}  
-#content,
-#sidebar_left,
-#sidebar_right {
-  background: white;
-  padding: 0 0.5em;
-  }
-#header,
-#nav {
-  overflow: hidden;
-  background: white;
-  padding: 0 0.5em;
+  max-width: 960px;
+  margin: 0 auto;
 }
-#user,
-#footer {
-  padding: 0 0.5em;
-  a {
-    color: $textColor;
-    &:hover,
-    &:focus {
+#page {
+  background: white;
+  padding: 0.5em;
+  -webkit-box-shadow: 0 0 10px #000000;
+  -moz-box-shadow:  0 0 10px #000000;
+  box-shadow: 0 0 10px #000000;
+}
+
+header {
+  display: inline-block;
+  width: 100%;
+  &:after {
+    display: block;
+    clear: both;
+    content: ' ';
+    visibility: hidden; 
+    height: 0;
+    }
+}
+#main-content,
+footer {
+  width: 100%;
+  overflow: hidden;
+  }
+.user,
+footer {
+    p,a {
+    color: darken($textColor, 20%);}
+    a:hover,
+    a:focus {
       color: lighten($textColor,20%);
     }
-  }
 }
 #logo {
   float: left;
@@ -110,10 +138,6 @@ a {
   float: right;
   text-align: right;
   position: relative;
-}
-#breadcrumb {
-  padding: 0.5em;
-  background: white;
 }
 .breadcrumb {
   overflow: hidden;
@@ -157,17 +181,62 @@ img {
   }
 div.messages {
   margin: 0;
+  clear: both;
 }
-.submitted .user-picture img {
-  float: left;
-  height: 2em;
-  margin-right: 0.25em 0.5em 0 0;
+.submitted {
+  overflow: hidden;  
+  .user-picture img {
+    float: left;
+    height: 2em;
+    margin-right: 0.25em 0.5em 0 0;
 }
-.field-content > img {
+}
+//stuff to display the staff profiles nicely…
+.field-name-field-staff-image {
   float: left;
   height: auto;
   margin: 0 0.5em 0.5em 0;
   max-width: 35%;
+}
+.field-name-field-gdc-reg-no .field-item:before {
+  content: "GDC Registration No:";
+  display: inline-block;
+  font-weight: bold;
+  width: 11em;
+}
+.field-name-field-qualifications .field-item:before {
+  display: inline-block;
+  font-weight: bold;
+  width: 11em;
+  content: "Qualification:"
+}
+.field-name-field-role .field-item {
+  display: inline-block;
+  &:first-of-type:before {
+  display: inline-block;
+  font-weight: bold;
+  width: 11em;
+  content: "Practice Role(s):"
+  }
+  &:after {
+    content: "|";
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+  &:last-of-type:after {
+    content: "";
+  }
+}
+.node-teaser {
+  overflow: hidden;
+}
+//end of staff page stuff
+.field-name-field-image,
+.views-field-field-image {
+  max-width: 30%;
+  height: auto;
+  float: left;
+  padding: 0 0.5em 0.5em 0;
 }
 span.author img {
   float: left;
@@ -177,43 +246,48 @@ span.author img {
   clear: both;
   overflow: hidden;
 }
-ul.menu {
-  li {
-    @include lists;
-    &.leaf {   
-    }
-  }
-}
 ul.team-member {
   text-align: center;
   li.staffpage {
     display: inline-block;
-    width: 20em;
+    width: 18em;
     p {
       text-align: center;
     }
   }
 }
-#block-search-form {
-  float: right;
-  padding: 0.5em;
-}
 input#menu {
   visibility: hidden;
   position: absolute;
 }
+//Google map responsiveness
+.gmap {
+  width: 100%;
+  height: 0;
+  padding-top: 30px;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    }
+}
 //small screens
-@media only screen and (max-width: 480px) {
+@media only screen {
   #container,
   #content,
   #sidebar_left,
-  #sidebar_left,
-  #copy,
+  #sidebar_right,
+  .copyright,
   #footer-links {
     width: 100%;
   }
   #site-slogan,
-  #user {
+  .user {
     display: none;
   }
   label[for="menu"]:after {
@@ -224,38 +298,58 @@ input#menu {
     top: 30px;
     right: 10px;
   }
+input#menu:checked ~ nav {
+  height: auto;
+  -webkit-transition: height 0.5s ease 0;
+  -moz-transition: height 0.5s ease 0;
+  -ms-transition: height 0.5s ease 0;
+  -o-transition: height 0.5s ease 0;
+  transition: height 0.5s ease 0;
 }
-#nav {
-  max-height: 0;
+nav {
+  height: 0;
+  overflow: hidden;
   background: #333;
-  -webkit-transition: height 0.5s linear;
-  -moz-transition: height 0.5s linear;
-  -ms-transition: height 0.5s linear;
-  -o-transition: height 0.5s linear;
-  transition: height 0.5s linear;
+  clear: both;
+  -webkit-transition: height 0.5s ease 0;
+  -moz-transition: height 0.5s ease 0;
+  -ms-transition: height 0.5s ease 0;
+  -o-transition: height 0.5s ease 0;
+  transition: height 0.5s ease 0;
   ul.menu {
-    li.leaf {
-      display: block;
-      float: left;
-      width: 50%;
+    width: 100%;
+    text-align: center;
+    li.leaf,
+    li.expanded {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      width: 9em;
       a {
-        color: #fff;
+        width: 100%;
+        color: #ccc;
+        &:hover,
+        &:focus {
+          background: #555;
+          outline: none;
+        }
       }
     }
+    li.expanded > ul {
+        display: none;
+      }
     
   }
- }
- input#menu:checked ~ div#nav {
-  max-height: 100%;
-  -webkit-transition: height 0.5s linear;
-  -moz-transition: height 0.5s linear;
-  -ms-transition: height 0.5s linear;
-  -o-transition: height 0.5s linear;
-  transition: height 0.5s linear;
+  #block-search-form {
+    clear: both;
+    text-align: center;
+    padding: 0.5em;
+  }
 }
-
+}
+//@media only screen and (min-width: 480px) {}
 //medium screens
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: 720px) {
   #site-slogan,
   #user {
     display: block;
@@ -265,33 +359,97 @@ input#menu {
     clear: both;
     }
   ul.menu {
-      li.leaf {
-        @include lists;
+      li.leaf,
+      li.expanded {
+        padding: 0;
+        margin: 0;
+        a {
+        padding: 1em;
+        }
+        & > ul {
+          position: absolute; //so not to disturb surroundings
+          opacity: 0; // for animation
+        }
       }
     }
-    #nav {
-      background: white;
-      max-height: 3.5em;
-    ul.menu li.leaf {
-      @include lists;
-      float: none;
-      width: auto;
-      border: 2px solid $hcolor;
-      border-radius: 5px;
-      background: lighten($hcolor, 20%);
-      a {
-        color: #000;
-      }
-    }
+  label[for="menu"]:after {
+    content: "";
   }
-}
+nav {
+  height: 4em;
+  background: #fff;
+  overflow: visible;
+  #block-search-form {
+    clear: none;
+    float: right;
+  }
+    ul.menu {
+      line-height: 1;
+      text-align: left;
+      li.leaf,
+      li.expanded {
+      width: auto;
+      position: relative;
+      margin-right: 2px;
+      a {
+        padding: 1em;
+        font-weight: bold;
+        float: left;
+        border: 2px solid $hcolor;
+        border-radius: 5px;
+        background: lighten($hcolor, 20%);
+        color: #000;
+        &:hover, &:focus {
+          outline: none;
+          background: $hcolor;
+          }
+        }
+      }
+      li.expanded:after {
+        content: '\25bc';
+        font-size: 0.5em;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        margin-left: -0.5em;
+        }      
+      li.expanded:hover > ul.menu {
+          display: block;
+          opacity: 1;
+          -webkit-transition: opacity 0.5s 0.8s ease;
+          -moz-transition: opacity 0.5s 0.8s ease;
+          -ms-transition: opacity 0.5s 0.8s ease;
+          -o-transition: opacity 0.5s 0.8s ease;
+          transition: opacity 0.5s 0.8s ease;
+          top: 3em;
+          z-index: 500;
+          li.leaf,
+          li.expanded {
+            padding: 0;
+            a {
+              width: 8em;
+            }
+            &:hover > ul {
+             left: 8em;
+             position: absolute;
+             top: 0;
+            }
+          }
+          li.expanded:after {
+            content: '\25ba';
+            font-size: 0.5em;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            margin-left: -0.5em;
+          }        
+       }  
+  }
+}}
+
 
 // desktop screens
-@media only screen and (min-width: 769px)and (max-width: 1440px) {
-  #container {
-    width: 80%;
-    margin: 0 auto;
-  }
+@media only screen and (min-width: 768px) {
   #site-slogan {
       top: 1em;
   }
@@ -304,18 +462,22 @@ input#menu {
     position: relative;
     &.right-sidebar {
       width: 75%;
+      padding-right: 0.5em;
     }
     &.left-sidebar {
       width: 75%;
       left: 25%;
+      padding-left: 0.5em;
     }
     &.two-sidebar {
       width: 50%;
       left: 25%;
+      padding: 0 0.5em;
     }
   }
   #sidebar_left {
     float: left;
+    padding-right: 0.5em;
     position: relative;
     width: 25%;
     &.left-sidebar {
@@ -327,19 +489,16 @@ input#menu {
   }
   #sidebar_right {
     float: left;
+    padding-left: 0.5em;
     position: relative;
     width: 25%;
   }
-  #copy {
+  .copyright {
     float: left;
     width: 66.67%;
   }
   #footer-links {
     float: left;
     width: 33.33%;
-  }
-  #block-search-form {
-    position: relative;
-    top: -3em;
   }
 }
