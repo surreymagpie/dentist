@@ -1,6 +1,6 @@
 ; $Id: corner.info,v 1.5 2010/07/01 23:27:32 goba Exp $
 name = dentist
-description = A theme for my own website without using default CSS
+description = A responsive theme for my own website
 version = 1.0
 core = 7.x
 engine = phptemplate
@@ -17,6 +17,6 @@ regions[sidebar_right] = Right Sidebar
 
 stylesheets[all][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
-scripts[] = scripts/dentist.js
+scripts[] = scripts/modernizr.min.js
 
 screenshot = screenshot.png

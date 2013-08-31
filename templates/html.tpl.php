@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html <?php print $html_attributes;?> lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
 		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   		<meta name="description" content="" />
-		<meta name="author" content="Rob" />
+		<meta name="author" content="Robert Curtis" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
 
 		<link rel="shortcut icon" href="favicon.ico" />
@@ -16,6 +16,10 @@
 		<?php print $head; ?>
 		<?php print $styles; ?>
  		<?php print $scripts; ?>
+		<!--[if IE 8]>
+ 			<link type="text/javascript" href="http://cornerhouse-dental.rhcloud.com/sites/all/themes/dentist/modernizr.min.js"/>
+ 			<link rel="stylesheet" type="text/css" media="screen" href="http://cornerhouse-dental.rhcloud.com/sites/all/themes/dentist/stylesheets/ie.css" />
+		<![endif]-->
  		</head>
 	<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
 		<div id="skip-link">

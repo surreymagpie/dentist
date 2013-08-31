@@ -33,7 +33,12 @@ function dentist_breadcrumb($breadcrumb) {
   $path = '';
 
   // Get URL arguments
-  $arguments = explode('/', request_uri());
+  $uri = request_uri();
+  // If a query string exists, we remove it
+  if (strpos($uri, '?')):
+	  $uri = strstr($uri, '?', TRUE);
+  endif;	 
+  $arguments = explode('/',$uri);
 
   // Remove empty values
   foreach ($arguments as $key => $value) {

@@ -1,9 +1,15 @@
+
 <div class="container">
-	<div class="user row"> <!-- the uppermost div housing the user menu -->
+<!-- for small screens the checkbox toggles the menu -->
+<input type="checkbox" id="menu">
+
+	<div class="user"> <!-- the uppermost div housing the user menu -->
 		<?php print render($page['user']); ?>
 	</div>
+
 	<div id="page">
 		<header>
+			<label for="menu" onclick></label> <!-- for the checkbox -->
 			<?php if($logo): ?>
 		        <div id="logo">
 		        <a  href="<?php print $front_page; ?>"
@@ -21,17 +27,13 @@
 			<?php endif; ?>
 		
 			<?php print render($page['header']); ?>
-				
-		<!-- for small screens the checkbox toggles the menu -->
-		<input type="checkbox" id="menu">
-		<label for="menu" onclick></label>
-			
 	    <nav>
-	        <?php print render($page['nav']); ?>	
+	        <?php print render($page['nav']); ?>
+        </nav>		
 		    <?php if($breadcrumb):
 				print $breadcrumb;
 			endif; ?>
-    	</nav>	
+
 		    <?php print $messages; ?><!-- status and error messages appear here -->
 	</header>		
 	<article>	    
