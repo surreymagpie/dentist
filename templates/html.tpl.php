@@ -13,7 +13,7 @@
 		<?php print $head; ?>
 		<?php print $styles; ?>
 		<!--[if IE lte 8]>
-			<link href="sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
+			<link href="./sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
 		<![endif]-->
  		</head>
 	<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
