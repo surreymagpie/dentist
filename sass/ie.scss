@@ -3,3 +3,54 @@
  * <!--[if IE]>
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
+#site-slogan {
+    top: 1em;
+}
+#main-content {
+  position: relative;
+  overflow: hidden;
+}
+#content{
+  float: left;
+  position: relative;
+  &.right-sidebar {
+    width: 75%;
+    padding-right: 0.5em;
+  }
+  &.left-sidebar {
+    width: 75%;
+    left: 25%;
+    padding-left: 0.5em;
+  }
+  &.two-sidebar {
+    width: 50%;
+    left: 25%;
+    padding: 0 0.5em;
+  }
+}
+#sidebar_left {
+  float: left;
+  padding-right: 0.5em;
+  position: relative;
+  width: 25%;
+  &.left-sidebar {
+    left: -75%;
+  }
+  &.two-sidebar {
+    left: -50%;
+  }
+}
+#sidebar_right {
+  float: left;
+  padding-left: 0.5em;
+  position: relative;
+  width: 25%;
+}
+.copyright {
+  float: left;
+  width: 66.67%;
+}
+#footer-links {
+  float: left;
+  width: 33.33%;
+}

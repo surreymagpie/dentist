@@ -8,7 +8,7 @@
 	</div>
 
 	<div id="page">
-		<header>
+		<div class="header">
 			<label for="menu" onclick></label> <!-- for the checkbox -->
 			<?php if($logo): ?>
 		        <div id="logo">
@@ -27,16 +27,16 @@
 			<?php endif; ?>
 		
 			<?php print render($page['header']); ?>
-	    <nav>
+	    <div class="nav">
 	        <?php print render($page['nav']); ?>
-        </nav>		
+        </div>		
 		    <?php if($breadcrumb):
 				print $breadcrumb;
 			endif; ?>
 
 		    <?php print $messages; ?><!-- status and error messages appear here -->
-	</header>		
-	<article>	    
+	</div>		
+	<div class="wrapper">	    
 		<?php if($page['highlighted']): ?><div id="highlighted">
 		    <?php print render($page['highlighted']); ?></div>
 		    <?php endif; ?>
@@ -67,20 +67,20 @@
 		     </div> <!--/#content -->
 		
 		      <?php if($page['sidebar_left']): ?>
-		        <aside id="sidebar_left" class="<?php print $content_class; ?>">
+		        <div id="sidebar_left" class="<?php print $content_class; ?>">
 		          <?php print render($page['sidebar_left']); ?>
-		        </aside> <!--/#sidebar_left -->
+		        </div> <!--/#sidebar_left -->
 		      <?php endif; ?>
 		
 		      <?php if($page['sidebar_right']): ?>
-	      	<aside id="sidebar_right" class="<?php print $content_class; ?>">
+	      	<div id="sidebar_right" class="<?php print $content_class; ?>">
 		          <?php print render($page['sidebar_right']); ?>
-			</aside><!--/#sidebar_right -->
+			</div><!--/#sidebar_right -->
 		      <?php endif; ?>      
 			</div>
-		</article><!-- /#main-content -->
+		</div><!-- /#main-content -->
 	</div><!-- /#page -->
-<footer class="row">
+<div class="footer">
 	<div class="copyright">
 		<p>Website design by Robert Curtis</p>
 		<p>Copyright &copy; 2013 Cornerhouse Dental Practice Ltd. All Rights Reserved.</p>
@@ -90,5 +90,5 @@
 		<div id="footer-links">
       	<?php print render($page['footer']); ?></div>
 	<?php endif; ?>
-</footer> <!-- /#footer -->
+</div> <!-- /#footer -->
 </div><!-- /#container -->

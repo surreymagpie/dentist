@@ -17,6 +17,5 @@ regions[sidebar_right] = Right Sidebar
 
 stylesheets[all][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
-scripts[] = scripts/modernizr.min.js
 
 screenshot = screenshot.png

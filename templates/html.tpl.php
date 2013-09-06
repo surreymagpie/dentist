@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html <?php print $html_attributes;?> lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-		Remove this if you use the .htaccess -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  		<meta name="description" content="" />
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
 		<meta name="author" content="Robert Curtis" />
 		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
-
 		<link rel="shortcut icon" href="favicon.ico" />
 		<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,700' rel='stylesheet' type='text/css' />
 		<title><?php print $head_title; ?></title>
 		<?php print $head; ?>
 		<?php print $styles; ?>
- 		<?php print $scripts; ?>
-		<!--[if IE 8]>
- 			<link type="text/javascript" href="http://cornerhouse-dental.rhcloud.com/sites/all/themes/dentist/modernizr.min.js"/>
- 			<link rel="stylesheet" type="text/css" media="screen" href="http://cornerhouse-dental.rhcloud.com/sites/all/themes/dentist/stylesheets/ie.css" />
+		<!--[if IE lte 8]>
+			<link href="sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
 		<![endif]-->
  		</head>
 	<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
@@ -28,5 +23,6 @@
 		<?php print $page_top; ?>
 		<?php print $page; ?>
 		<?php print $page_bottom; ?>
+		<?php print $scripts; ?>
 	</body>
 </html>

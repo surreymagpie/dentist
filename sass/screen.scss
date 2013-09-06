@@ -23,7 +23,7 @@ $sidebar: #f3f3f3;
   margin-top: -3em;
 }
 
-
+@import 'compass';
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/utilities/general";
@@ -106,7 +106,7 @@ a {
   box-shadow: 0 0 10px #000000;
 }
 
-header {
+.header {
   display: inline-block;
   width: 100%;
   &:after {
@@ -118,12 +118,12 @@ header {
     }
 }
 #main-content,
-footer {
+.footer {
   width: 100%;
   overflow: hidden;
   }
 .user,
-footer {
+.footer {
     p,a {
     color: darken($textColor, 20%);}
     a:hover,
@@ -187,6 +187,9 @@ iframe#twitter-widget-0 {
   width: 100%;
   height: 700px;
   background: #f9f9f9;
+}
+p.twitter {
+  margin: 0;
 }
 
 //stuff to display the staff profiles nicely…
@@ -284,7 +287,7 @@ input#menu {
   }
 }
 //small screens
-@media only screen and (max-width: 32em) {
+@media only screen and (max-width: 391px) {
   ul.tabs.primary {
     margin: 0;
     padding: 0;
@@ -358,16 +361,18 @@ input#menu {
   transition: right 0.8s ease 0s;
 }
 input#menu:checked ~ #page {
-  right: -200px;
+  right: -220px;
   -webkit-transition: right 0.5s 0 ease; //slide the page to the right to reveal the nav
   -moz-transition: right 0.5s 0 ease;
   -ms-transition: right 0.5s 0 ease;
   -o-transition: right 0.5s 0 ease;
   transition: right 0.5s 0 ease;
 }
-nav {
+.nav {
+  width: 220px;
+  z-index: -1;
   position: absolute;//position the nav to the left side of #page
-  left: -200px;
+  left: -220px;
   top: 0;
   overflow: hidden;
   background: #555555;
@@ -391,8 +396,7 @@ nav {
     }
     li.expanded > ul {
         display: none; //hide 2nd and third level menu items
-      }
-    
+      }    
   }
   #block-search-form {
     clear: both;
@@ -401,7 +405,7 @@ nav {
   }
 }
 }
-@media only screen and (min-width: 32em) {
+@media only screen and (min-width: 392px) {
 .breadcrumb a {
   color: #fff;
   padding: 0.5em 0 0.5em 3em;
@@ -428,7 +432,16 @@ nav {
       &:first-child {
         padding-left: 1em;
       }
+    }
 }
+@media only screen and (min-width:392px) and (max-width:768px) {
+  .two-siderbar{
+    #sidebar_left,
+    #sidebar_right {
+      width: 50%;
+      float: left;
+    }
+  }
 }
 //medium screens
 @media only screen and (min-width: 720px) {
@@ -460,15 +473,16 @@ nav {
   label[for="menu"]:after {
     content: "";
   }
-nav {
+.nav {
   position: relative; //cancels drawer style mobile menu
   left: 0;
   clear: both;
-  height: 4em;
+  width: auto;
+  z-index: 5;
+  height: auto;
   background: #fff;
   overflow: visible;
   #block-search-form {
-    clear: none;
     float: right;
   }
     ul.menu {
@@ -480,16 +494,31 @@ nav {
       width: auto;
       position: relative;
       a {
-        padding: 1em;
-        font-weight: bold;
+        padding: 1em 0;
+        width: 7em;//
+        text-align: center;//
+        margin-right: -4px;
+        //font-weight: bold;
         float: left;
-        border: 2px solid $hcolor;
-        border-radius: 5px;
-        background: lighten($hcolor, 20%);
+        border-left: 1px solid $hcolor;
+        border-right: 1px solid $hcolor;//
+        //border-radius: 5px;
+        //background: lighten($hcolor, 20%);
+        // needs latest Compass, add '@import "compass"' to your scss
+        background-color: $hcolor; // Old browsers
+        @include filter-gradient(lighten($hcolor,20%), darken($hcolor,20%), vertical); // IE6-8
+        // IE9 SVG, needs conditional override of 'filter' to 'none'
+        $experimental-support-for-svg: true;
+        @include background-image(linear-gradient(top,  lighten($hcolor,20%) 0%,#ffcf33 40%, #ffcf33 60%, darken($hcolor,20%) 100%));
         color: #000;
         &:hover, &:focus {
           outline: none;
-          background: $hcolor;
+          //background: $hcolor;
+          background-color: $hcolor; // Old browsers
+        @include filter-gradient(lighten($hcolor,30%), darken($hcolor,10%), vertical); // IE6-8
+        // IE9 SVG, needs conditional override of 'filter' to 'none'
+        $experimental-support-for-svg: true;
+        @include background-image(linear-gradient(top,  lighten($hcolor,30%) 0%,#ffcf33 40%, #ffcf33 60%, darken($hcolor,10%) 100%));
           }
         }
       }
@@ -518,10 +547,10 @@ nav {
             margin: 0 0 -2px 0;
             padding: 0;
             a {
-              width: 8em;
+              width: 7em;
             }
             &:hover > ul {
-             left: 8em;
+             left: 7em;
              position: absolute;
              top: 0;
             }
@@ -533,14 +562,11 @@ nav {
             top: 70%;
             left: 50%;
             margin-left: -0.5em;
-          }        
-       }  
+        }        
+      }  
+    }
   }
 }
-
-}
-
-
 // desktop screens
 @media only screen and (min-width: 768px) {
   #site-slogan {
@@ -594,5 +620,4 @@ nav {
     float: left;
     width: 33.33%;
   }
-
 }
