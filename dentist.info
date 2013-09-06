@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ; $Id: corner.info,v 1.5 2010/07/01 23:27:32 goba Exp $
 name = dentist
 description = A responsive theme for my own website
@@ -18,4 +19,27 @@ regions[sidebar_right] = Right Sidebar
 stylesheets[all][] = stylesheets/screen.css
 stylesheets[print][] = stylesheets/print.css
 
+=======
+; $Id: corner.info,v 1.5 2010/07/01 23:27:32 goba Exp $
+name = dentist
+description = A responsive theme for my own website
+version = 1.0
+core = 7.x
+engine = phptemplate
+
+regions[user] = User
+regions[header] = Header
+regions[nav] = Navigation
+regions[highlighted] = Highlighted
+regions[content] = Content
+regions[footer] = Footer
+regions[sidebar_left] = Left Sidebar
+regions[sidebar_right] = Right Sidebar
+
+
+stylesheets[all][] = stylesheets/screen.css
+stylesheets[print][] = stylesheets/print.css
+scripts[] = scripts/modernizr.min.js
+
+>>>>>>> 382310ede3b8181244b53036d203559d8351b5c6
 screenshot = screenshot.png

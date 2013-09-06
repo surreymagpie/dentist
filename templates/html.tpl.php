@@ -12,9 +12,12 @@
 		<title><?php print $head_title; ?></title>
 		<?php print $head; ?>
 		<?php print $styles; ?>
+<<<<<<< HEAD
 		<!--[if IE lte 8]>
 			<link href="./sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
 		<![endif]-->
+=======
+>>>>>>> 382310ede3b8181244b53036d203559d8351b5c6
  		</head>
 	<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
 		<div id="skip-link">
