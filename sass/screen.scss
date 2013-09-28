@@ -310,20 +310,15 @@ input#menu {
       }
     }
   }
-    .breadcrumb a {
+  .breadcrumb a {
     padding: 0;
-    @for $i from 1 through 4 {
-      &:nth-of-type(#{$i}) {
-        color: lighten($crumbs,$i*7%);
+    color: $crumbs;
+    &:hover {
+        color: lighten($crumbs,7%);
       }
-      &:hover {
-        color: $crumbs;
-        background: lighten($crumbs,$i*7%);
-      }
-    }
-  }	
+    }	
 }
-@media only screen {
+@media only screen and (max-width: 719px) {
   #container,
   #content,
   #sidebar_left,
@@ -353,28 +348,47 @@ input#menu {
 }
 #page {
   position: relative;
-  right: 0; //start in normal porsition
-  -webkit-transition: right 0.8s ease 0s;
-  -moz-transition: right 0.8s ease 0s;
-  -ms-transition: right 0.8s ease 0s;
-  -o-transition: right 0.8s ease 0s;
-  transition: right 0.8s ease 0s;
+  left: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  -o-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);//start in normal porsition
+  -webkit-transition: all 0.8s ease 0s;
+  -moz-transition: all 0.8s ease 0s;
+  -ms-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 input#menu:checked ~ #page {
-  right: -220px;
-  -webkit-transition: right 0.5s 0 ease; //slide the page to the right to reveal the nav
-  -moz-transition: right 0.5s 0 ease;
-  -ms-transition: right 0.5s 0 ease;
-  -o-transition: right 0.5s 0 ease;
-  transition: right 0.5s 0 ease;
+  left: 0;
+  -webkit-transform: translate3d(200px,0,0);
+  -moz-transform: translate3d(200px,0,0);
+  -ms-transform: translate3d(200px,0,0);
+  -o-transform: translate3d(200px,0,0);
+  transform: translate3d(200px,0,0);
+  -webkit-transition: all 0.8s ease 0s;
+  -moz-transition: all 0.8s ease 0s;
+  -ms-transition: all 0.8s ease 0s;
+  -o-transition: all 0.8s ease 0s;
+  transition: all 0.8s ease 0s;
 }
 .nav {
-  width: 220px;
-  z-index: -1;
+  width: 200px;
+  height: 100%;
+  -webkit-box-shadow: -0.5em 0 0.5em rgba(0,0,0,0.5) inset;
+  -moz-box-shadow: -0.5em 0 0.5em rgba(0,0,0,0.5) inset;
+  box-shadow: -0.5em 0 0.5em rgba(0,0,0,0.5) inset;
+  z-index: 1;
   position: absolute;//position the nav to the left side of #page
-  left: -220px;
+  left: 0;
   top: 0;
-  overflow: hidden;
+  -webkit-transform: translate3d(-100%,0px,0px);
+  -moz-transform: translate3d(-100%,0px,0px);
+  -ms-transform: translate3d(-100%,0px,0px);
+  -o-transform: translate3d(-100%,0px,0px);
+  transform: translate3d(-100%,0px,0px);
+  //overflow: hidden;
   background: #555555;
   ul.menu {
     width: 8em;
@@ -533,14 +547,15 @@ input#menu:checked ~ #page {
       li.expanded:hover > ul.menu {
           display: block;
           opacity: 1;
-          -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-          box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+          -webkit-box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+          box-shadow: 0 5px 30px rgba(0,0,0,0.5);
           -webkit-transition: opacity 0.5s 0.8s ease;
           -moz-transition: opacity 0.5s 0.8s ease;
           -ms-transition: opacity 0.5s 0.8s ease;
           -o-transition: opacity 0.5s 0.8s ease;
           transition: opacity 0.5s 0.8s ease;
-          top: 3em;
+          top: 2em;
+          left: 0;
           z-index: 500;
           li.leaf,
           li.expanded {

@@ -3,6 +3,52 @@
  * <!--[if IE]>
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
+
+@import "mixins";
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#logo {
+  width: 35%;
+  float: left;
+}
+
+#site-slogan {
+  float: left;
+  width: 65%;
+  text-align: right;
+}
+
+.nav {
+  clear: both;
+  ul.menu {
+    li.leaf,
+    li.expanded {
+      margin: 0 -4px 0 0;
+      padding: 0;
+      display: inline-block;
+      a {
+        padding: 1em 0;
+        width: 7em;
+        text-align: center;
+        background: url("http://localhost/sites/all/themes/dentist/images/button.png") center no-repeat;
+        color: #000;
+      }
+    }
+    li.expanded > ul.menu{
+      display: none;
+    }
+  }  
+}
+.submitted img {
+  float: left;
+  height: 1em;
+  width: auto;
+}
+
 #site-slogan {
     top: 1em;
 }
@@ -15,22 +61,22 @@
   position: relative;
   &.right-sidebar {
     width: 75%;
-    padding-right: 0.5em;
+    padding-right: 1%;
   }
   &.left-sidebar {
     width: 75%;
     left: 25%;
-    padding-left: 0.5em;
+    padding-left: 1%;
   }
   &.two-sidebar {
     width: 50%;
     left: 25%;
-    padding: 0 0.5em;
+    padding: 0 1%;
   }
 }
 #sidebar_left {
   float: left;
-  padding-right: 0.5em;
+  padding-right: 1%;
   position: relative;
   width: 25%;
   &.left-sidebar {
@@ -42,7 +88,7 @@
 }
 #sidebar_right {
   float: left;
-  padding-left: 0.5em;
+  padding-left: 1%;
   position: relative;
   width: 25%;
 }
@@ -53,4 +99,11 @@
 #footer-links {
   float: left;
   width: 33.33%;
+}
+.feed-icon img {
+  width: 2%;
+  height: auto;
+}
+li.staffpage img {
+  width: 9em;
 }

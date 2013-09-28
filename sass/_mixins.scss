@@ -1,8 +1,15 @@
 $headers: "PT Serif", Georgia, Times, serif;
-$hcolor: #FFCF33;
 $body: "PT Sans", Verdana, Arial, san-serif;
 $textColor: #666666;
-$crumbs: #5090f0;
+$crumbs: #5090f0; //base color of breadcrumb arrows
+$hcolor: #FFCF33;//invert($crumbs);
+$gradient: mix($hcolor, #ffffff, 40%);
+$sidebar: #f3f3f3;
+$experimental-support-for-svg: true;
+
+@function pem($px, $base: 16) {
+    @return ($px / $base) + em;
+}
 
 //mixins
 @mixin lists {
@@ -19,9 +26,9 @@ $crumbs: #5090f0;
   width: 0;
   height: 0;
   position: absolute;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
+  border-top: pem(48) solid transparent;
+  border-bottom: pem(48) solid transparent;
   left: 100%;
   top: 50%;
-  margin-top: -50px;
+  margin-top: pem(-48);
 }

@@ -1,0 +1,266 @@
+@function pem($px, $base: 16) {
+    @return ($px / $base) + em;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  -webkit-animation: bugfix infinite 1s;
+  *zoom: 1;
+  width: 100%;
+  background: #555;
+  font-family: $body;
+  font-weight: 300;
+  font-size: 100%;
+  color: $textColor;
+}
+
+@-webkit-keyframes bugfix { 
+  from { padding: 0; } 
+  to { padding: 0; } 
+}
+
+ul, ol {
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol {
+    margin: 0;
+}
+
+p {
+  font-size: pem(16);
+  line-height: pem(24);
+  margin-bottom: pem(8);
+  margin-top: 0;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $crumbs;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: thin dotted;
+    color: lighten($crumbs,10%);
+  }
+  &.active {
+    font-weight: normal;
+  }
+}
+
+#{headers(all)} {
+  color: $hcolor;
+  font-family: $headers;
+  font-weight: 400;
+}
+h1 {
+  font-size: 2em;
+}
+
+.user,
+.footer {
+  a {
+    color: #666;
+  }
+}
+ul.menu {
+  
+  li.leaf,
+  li.expanded {
+    display: inline;
+    margin: 0;
+    padding: 0 1em 0 0;
+    list-style: none;
+    &.last {
+      padding-right: 0;
+    }
+    a {
+      display: inline-block;
+      padding: 1em 0px;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  clear: left;
+  float: left;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.staffpage img {
+  float: none;
+}
+.node-article img,
+.views-field-field-image img {
+  max-width: 30%;
+}
+
+.container {
+  width: 100%;
+  max-width: pem(960);
+  margin: 0 auto;
+}
+
+#page {
+  width: 100%;
+  background: #fff;
+  padding: 0 0.5em;
+}
+#main-content {
+  clear: left;
+  overflow: hidden;
+}
+input#menu {
+  position: absolute;
+  visibility: hidden;
+}
+
+iframe#facebook,
+iframe.twitter-timeline  {
+  width: 100%;
+  height: pem(700);
+  border: none;
+}
+
+.gmap {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin-bottom: 2.5em;
+  position: relative;
+  & > iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  & > p {
+    position: absolute;
+    bottom: -2em;
+  }
+}
+
+//staff pages
+ul.team-member {
+  text-align: center;
+  li.staffpage {
+    display: inline-block;
+    width: 18em;
+    p {
+      text-align: center;
+    }
+  }
+}
+.field-name-field-staff-image {
+  float: left;
+  height: auto;
+  max-width: 35%;
+}
+.field-name-field-gdc-reg-no {
+  width: auto;
+  overflow: hidden;
+  &:before {
+    content: "GDC Registration No:";
+    display: inline-block;
+    font-weight: bold;
+    width: 11em;
+  }
+}
+.field-name-field-qualifications {
+  width: auto;
+  overflow: hidden;
+  &:before {
+    display: inline-block;
+    font-weight: bold;
+    width: 11em;
+    content: "Qualification:"
+  }
+}
+.field-name-field-role {
+  width: auto;
+  overflow: hidden;
+  &:before {
+    display: inline-block;
+    font-weight: bold;
+    width: 11em;
+    content: "Practice Role(s):"
+  }
+  .field-item,
+  .field-items {
+    display: inline-block;
+  }
+  .field-item:after {
+    content: '|';
+    display: inline-block;
+    padding: 0 0.5em;
+  }
+  .field-item:last-of-type:after {
+    content: '';
+  }
+}
+.node-teaser {
+  overflow: hidden;
+}
+.active,
+.active-trail {
+  font-weight: normal;
+}
+// .field-name-field-image,
+// .views-field-field-image,
+// .field-type-image img {
+  // max-width: 30%;
+  // height: auto;
+  // float: left;
+  // padding: 0 0.5em 0.5em 0;
+// }
+span.author img,
+.submitted img {
+  float: left;
+  height: 1.25em;
+  margin-right: 0.25em;
+}
+.views-row {
+  clear: both;
+  overflow: hidden;
+}
+input[type='text'],
+input[type='password'] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  max-width: 12.5em;
+  height: 2em;
+}
+label {
+  display: inline-block;
+  width: 5em;
+}
+.form-required {
+  color: #000000;
+}
+.form-type-textfield,
+.form-actions,
+.edit-actions {
+  //display: inline-block;
+  //padding: 0.5em 0;
+  margin: 0;
+}
+input#edit-submit {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: url('/sites/all/themes/dentist/images/search.png') no-repeat;
+  border: none;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+}

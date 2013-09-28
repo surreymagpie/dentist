@@ -5,15 +5,15 @@
 		<meta charset="utf-8" />
 		<meta name="description" content="" />
 		<meta name="author" content="Robert Curtis" />
-		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="favicon.ico" />
 		<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,700' rel='stylesheet' type='text/css' />
 		<title><?php print $head_title; ?></title>
 		<?php print $head; ?>
 		<?php print $styles; ?>
-		<!--[if IE lte 8]>
-			<link href="./sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
+		<!--[if IE 8]>
+			<link href="http://localhost/sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
 		<![endif]-->
  		</head>
 	<body class="<?php print $classes; ?>" <?php print $attributes; ?>>
