@@ -113,11 +113,13 @@ img {
 li.staffpage img {
   width: 9em;
 }
-.node-staff-member {
+.node-staff-member,
+.node-treatment-type {
   label {
-    width: 8em;
+    width: 11em;
   }
   img {
-    width: 15em;
+    max-width: auto;
+    width: auto;
   }
 }
