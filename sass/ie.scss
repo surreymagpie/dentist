@@ -4,8 +4,6 @@
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
 
-@import "mixins";
-
 img {
   width: 100%;
   height: auto;
@@ -24,23 +22,31 @@ img {
 
 .nav {
   clear: both;
+  position: relative;
   ul.menu {
+    font-size: 0;
     li.leaf,
     li.expanded {
-      margin: 0 -4px 0 0;
+      font-size: 16px;
+      margin-right: -4px;
       padding: 0;
       display: inline-block;
       a {
         padding: 1em 0;
         width: 7em;
         text-align: center;
-        background: url("http://localhost/sites/all/themes/dentist/images/button.png") center no-repeat;
+        background: url("http://www.cornerhouse-dental.co.uk/sites/all/themes/dentist/images/button.png") center no-repeat;
         color: #000;
       }
     }
     li.expanded > ul.menu{
       display: none;
     }
+  }
+  #search-block-form {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
   }  
 }
 .submitted img {
@@ -106,4 +112,14 @@ img {
 }
 li.staffpage img {
   width: 9em;
+}
+.node-staff-member,
+.node-treatment-type {
+  label {
+    width: 11em;
+  }
+  img {
+    max-width: auto;
+    width: auto;
+  }
 }
