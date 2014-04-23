@@ -17,9 +17,9 @@ body {
   color: $textColor;
 }
 
-@-webkit-keyframes bugfix { 
-  from { padding: 0; } 
-  to { padding: 0; } 
+@-webkit-keyframes bugfix {
+  from { padding: 0; }
+  to { padding: 0; }
 }
 
 ul, ol {
@@ -71,7 +71,7 @@ h1 {
   }
 }
 ul.menu {
-  
+
   li.leaf,
   li.expanded {
     display: inline;
@@ -149,6 +149,19 @@ iframe.twitter-timeline  {
   }
 }
 
+address {
+  font-style: normal;
+  padding: 1em 0;
+  div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2em;
+  }
+  span {
+    display: block;
+  }
+}
+
 //staff pages
 ul.team-member {
   text-align: center;
@@ -222,11 +235,16 @@ ul.team-member {
   // float: left;
   // padding: 0 0.5em 0.5em 0;
 // }
+.node-treatment-type img {
+    width: 20em;
+}
 span.author img,
 .submitted img {
   float: left;
   height: 1.25em;
+  width: auto;
   margin-right: 0.25em;
+  padding: 0;
 }
 .views-row {
   clear: both;
@@ -242,7 +260,7 @@ input[type='password'] {
 }
 label {
   display: inline-block;
-  width: 5em;
+  width: 10em;
 }
 .form-required {
   color: #000000;

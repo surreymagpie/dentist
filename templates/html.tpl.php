@@ -12,7 +12,7 @@
 		<title><?php print $head_title; ?></title>
 		<?php print $head; ?>
 		<?php print $styles; ?>
-		<!--[if IE 8]>
+		<!--[if lte IE 8]>
 			<link href="<?php print $base_url;?>/sites/all/themes/dentist/stylesheets/ie.css" type="text/css" rel="stylesheet"/>
 		<![endif]-->
  		</head>

@@ -33,9 +33,9 @@ $sidebar: #f3f3f3;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body { 
+body {
   -webkit-animation: bugfix infinite 1s;
-  *zoom: 1; 
+  *zoom: 1;
   background: #555555;
   font-family: $body;
   font-weight: 300;
@@ -43,9 +43,9 @@ body {
   line-height: 1.25em;
   color: $textColor;
   }
-@-webkit-keyframes bugfix { 
-  from { padding: 0; } 
-  to { padding: 0; } 
+@-webkit-keyframes bugfix {
+  from { padding: 0; }
+  to { padding: 0; }
 }
 p {
   margin: 0.5em 0;
@@ -84,7 +84,7 @@ ul.menu {
 }
 
 
- 
+
 a {
   color: $crumbs;
   text-decoration: none;
@@ -113,7 +113,7 @@ a {
     display: block;
     clear: both;
     content: ' ';
-    visibility: hidden; 
+    visibility: hidden;
     height: 0;
     }
 }
@@ -164,7 +164,7 @@ div.messages {
 }
 .submitted {
   overflow: hidden;
-  }  
+  }
 .user-picture img {
     float: left;
     height: 1em;
@@ -286,6 +286,19 @@ input#menu {
     bottom: -2em;
   }
 }
+
+address {
+  font-style: normal;
+  padding: 1em 0;
+  div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2em;
+  }
+  span {
+    display: block;
+  }
+}
 //small screens
 @media only screen and (max-width: 391px) {
   ul.tabs.primary {
@@ -316,7 +329,7 @@ input#menu {
     &:hover {
         color: lighten($crumbs,7%);
       }
-    }	
+    }
 }
 @media only screen and (max-width: 719px) {
   #container,
@@ -410,7 +423,7 @@ input#menu:checked ~ #page {
     }
     li.expanded > ul {
         display: none; //hide 2nd and third level menu items
-      }    
+      }
   }
   #block-search-form {
     clear: both;
@@ -428,18 +441,18 @@ input#menu:checked ~ #page {
         border-left: 3em solid white;
         z-index: 1;
         margin-left: 2px;
-      }    
+      }
     @for $i from 1 through 4 {
       &:nth-of-type(#{$i}){
         background: lighten($crumbs,$i*7%);
         &:hover {
         background: $crumbs;}}
       &:nth-of-type(#{$i}):after {
-        @include breadcrumbs; 
+        @include breadcrumbs;
         border-left: 3em solid lighten($crumbs,$i*7%);
         z-index: 2;}
       &:nth-of-type(#{$i}):hover:after {
-        @include breadcrumbs; 
+        @include breadcrumbs;
         border-left: 3em solid $crumbs;
         z-index: 2;}
       }
@@ -543,7 +556,7 @@ input#menu:checked ~ #page {
         top: 70%;
         left: 50%;
         margin-left: -0.5em;
-        }      
+        }
       li.expanded:hover > ul.menu {
           display: block;
           opacity: 1;
@@ -577,8 +590,8 @@ input#menu:checked ~ #page {
             top: 70%;
             left: 50%;
             margin-left: -0.5em;
-        }        
-      }  
+        }
+      }
     }
   }
 }
