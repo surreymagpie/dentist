@@ -1,4 +1,4 @@
-<?php 
+<?php
 // remove width and height attributes from images
 function dentist_preprocess_image(&$variables) {
   $attributes = &$variables['attributes'];
@@ -9,19 +9,29 @@ function dentist_preprocess_image(&$variables) {
   }
 }
 // determine which column layout to use
-function dentist_preprocess_page(&$variables) {
-	$page = $variables['page'];
+function dentist_preprocess_html(&$variables) {
 
-if ($page['sidebar_left'] && $page['sidebar_right']) :
-	$content_class = 'two-sidebar';
-elseif ($page['sidebar_left'] && !$page['sidebar_right']) :
-	$content_class = 'left-sidebar';
-elseif ($page['sidebar_right'] && !$page['sidebar_left']) :
-	$content_class = 'right-sidebar';	
-else :
-	$content_class = '';
-endif;
-	$variables['content_class'] = $content_class;
+  drupal_add_js( path_to_theme() .'/scripts/modernizr.min.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+  ));
+
+  // If 'no-sidebars' already exists, remove it
+  if (($key = array_search('no-sidebars', $variables['classes_array'])) !== false) {
+      unset($variables['classes_array'][$key]);
+  }
+
+  if ($variables['page']['sidebar_left'] && $variables['page']['sidebar_right']) :
+    $body_class = 'two-sidebars';
+  elseif ($variables['page']['sidebar_left']) :
+    $body_class = 'one-sidebar left-sidebar';
+  elseif ($variables['page']['sidebar_right']) :
+    $body_class = 'one-sidebar right-sidebar';
+  else :
+    $body_class = 'no-sidebar';
+  endif;
+
+  $variables['classes_array'][] = $body_class;
 }
 
 //customise breadcrumb markup
@@ -37,7 +47,7 @@ function dentist_breadcrumb($breadcrumb) {
   // If a query string exists, we remove it
   if (strpos($uri, '?')):
 	  $uri = strstr($uri, '?', TRUE);
-  endif;	 
+  endif;
   $arguments = explode('/',$uri);
 
   // Remove empty values
