@@ -1,0 +1,9 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/rob/Sites/dentist",
+      "folder_exclude_patterns": [".sass-cache", "node_modules"]
+		}
+	]
+}
