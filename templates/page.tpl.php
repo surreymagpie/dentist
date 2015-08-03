@@ -42,7 +42,7 @@
       <?php endif; ?>
 
       <div id="main-content">
-        <div id="content" class="<?php print $content_class; ?>">
+        <div id="content">
           <?php print render($title_prefix); ?>
           <?php if($title): ?>
           <h1 class="title" id="page-title">
@@ -69,13 +69,13 @@
         </div> <!--/#content -->
 
 				<?php if($page['sidebar_left']): ?>
-				<div id="sidebar_left" class="<?php print $content_class; ?>">
+				<div id="sidebar_left" class="sidebar sidebar-left">
 			  <?php print render($page['sidebar_left']); ?>
 				</div> <!--/#sidebar_left -->
 				<?php endif; ?>
 
 				<?php if($page['sidebar_right']): ?>
-				<div id="sidebar_right" class="<?php print $content_class; ?>">
+				<div id="sidebar_right" class="sidebar sidebar-right">
 				<?php print render($page['sidebar_right']); ?>
 				</div> <!--/#sidebar_right -->
 				<?php endif; ?>
