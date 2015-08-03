@@ -213,3 +213,5 @@ function dentist_process_html(&$variables) {
   // Render the head scripts
   $variables['head_scripts'] = drupal_get_js('head_scripts');
 }
+
+include_once 'includes/node.inc';
