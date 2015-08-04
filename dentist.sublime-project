@@ -1,9 +1,9 @@
 {
-	"folders":
-	[
-		{
-			"path": "/home/rob/Sites/dentist",
+  "folders":
+  [
+    {
+      "path": "/home/rob/Sites/drupal/sites/all/themes/dentist/",
       "folder_exclude_patterns": [".sass-cache", "node_modules"]
-		}
-	]
+    }
+  ]
 }

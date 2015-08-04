@@ -31,10 +31,8 @@ gulp.task('serve', ['sass'], function() {
     gulp.watch([src.php, src.inc], ['theme', browserSync.reload]);
 });
 
-gulp.task('theme', function() {
-    return shell.task([
-        'drush cc theme-registry',
-    ])
-});
+gulp.task('theme', shell.task([
+        'drush @local cc theme-registry',
+    ]));
 
 gulp.task('default', ['serve']);
