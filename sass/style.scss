@@ -1,9 +1,9 @@
-@import "compass";
 @import "normalize";
 
 @import "mixins";
 
 @import "base";
+@import "layout";
 
 @media screen and (max-width:pem(700)){
   @import "mobile";
@@ -11,7 +11,7 @@
 
 @media screen and (min-width:pem(701)){
   @import "wide";
-} 
+}
 
 @media screen and (max-width:pem(773)) and (min-width:pem(701)) {
   .nav ul.menu li.leaf a, .nav ul.menu li.expanded a {

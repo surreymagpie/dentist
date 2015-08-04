@@ -74,19 +74,16 @@
         <?php print render($page['content']); ?>
 
         <?php print $feed_icons; ?>
-
       </section>
 
       <?php if($page['sidebar_left']): ?>
         <section id="sidebar_left" class="sidebar sidebar-left">
-        Sidebar here
         <?php print render($page['sidebar_left']); ?>
         </section> <!--/#sidebar_right -->
       <?php endif; ?>
 
       <?php if($page['sidebar_right']): ?>
         <section id="sidebar_right" class="sidebar sidebar-right">
-        Sidebar here
         <?php print render($page['sidebar_right']); ?>
         </section> <!--/#sidebar_right -->
       <?php endif; ?>
@@ -95,7 +92,6 @@
   </main> <!-- /#main-content.site__content-->
 
   <footer class="site__footer">
-    Footer here
     <?php if($page['footer']): ?>
   		<?php print render($page['footer']); ?>
 		<?php endif; ?>

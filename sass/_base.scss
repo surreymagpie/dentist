@@ -10,11 +10,9 @@ body {
   -webkit-animation: bugfix infinite 1s;
   *zoom: 1;
   width: 100%;
-  background: #555;
   font-family: $body;
   font-weight: 300;
   font-size: 100%;
-  color: $textColor;
 }
 
 @-webkit-keyframes bugfix {
@@ -104,13 +102,6 @@ img {
 .views-field-field-image img {
   max-width: 30%;
 }
-
-.container {
-  width: 100%;
-  max-width: pem(960);
-  margin: 0 auto;
-}
-
 #page {
   width: 100%;
   background: #fff;
