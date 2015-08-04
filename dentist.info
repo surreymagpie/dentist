@@ -4,9 +4,8 @@ version = 1.1
 core = 7.x
 engine = phptemplate
 
-regions[user] = User
+regions[navbar] = Navigation
 regions[header] = Header
-regions[nav] = Navigation
 regions[highlighted] = Highlighted
 regions[content] = Content
 regions[footer] = Footer
