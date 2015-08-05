@@ -15,6 +15,11 @@ function dentist_preprocess_html(&$variables) {
     'scope' => 'footer',
   ));
 
+  drupal_add_css('http://fonts.googleapis.com/css?family=Lato:400,700,300,100', array(
+    'type' => 'external',
+    'group' => 'CSS_THEME'
+  ));
+
   // If 'no-sidebars' already exists, remove it
   if (($key = array_search('no-sidebars', $variables['classes_array'])) !== false) {
       unset($variables['classes_array'][$key]);
