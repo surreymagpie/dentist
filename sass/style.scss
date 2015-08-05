@@ -6,11 +6,11 @@
 @import "layout";
 
 @media screen and (max-width:pem(700)){
-  @import "mobile";
+  // @import "mobile";
 }
 
 @media screen and (min-width:pem(701)){
-  @import "wide";
+  // @import "wide";
 }
 
 @media screen and (max-width:pem(773)) and (min-width:pem(701)) {

@@ -79,7 +79,7 @@
       <?php if($page['sidebar_left']): ?>
         <section id="sidebar_left" class="sidebar sidebar-left">
         <?php print render($page['sidebar_left']); ?>
-        </section> <!--/#sidebar_right -->
+        </section> <!--/#sidebar_left -->
       <?php endif; ?>
 
       <?php if($page['sidebar_right']): ?>
