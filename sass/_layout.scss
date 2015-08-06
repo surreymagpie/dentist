@@ -3,7 +3,7 @@
     flex-direction: column;
     min-height: 100vh;
     & > * {
-        padding: 1.5rem 0.5rem;
+        padding: $base-spacing 0.5rem;
     }
 }
 
@@ -17,29 +17,29 @@
 
 .primary-content,
 .sidebar {
-    margin: 1.5rem 0;
+    margin: $base-spacing 0;
     flex-basis: 100%;
 }
 
 @media (min-width: 500px) {
-    .two-sidebars .sidebar {
-        flex-basis: 48%;
+    /** let sidebars share a row */
+    .sidebar {
+        flex: 1 50%;
     }
 }
 
 @media (min-width: 920px) {
     .primary-content {
-        flex-grow: 1;
-        flex-basis: 48%;
+        flex: 1 50%;
     }
     .sidebar {
-        flex-basis: 22%;
+        flex: 0 25%;
     }
     .sidebar-left {
         order: -1;
-        margin-right: 3%;
+        padding-right: $base-spacing;
     }
     .sidebar-right {
-        margin-left: 3%;
+        padding-left: $base-spacing;
     }
 }

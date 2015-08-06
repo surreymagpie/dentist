@@ -2,15 +2,18 @@
     @return ($px / $base) + em;
 }
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  box-sizing: inherit;
+}
+html {
+  font-size: 100%;
   box-sizing: border-box;
 }
+
 body {
   -webkit-animation: bugfix infinite 1s;
   *zoom: 1;
   width: 100%;
-  font-family: $body;
+  font-family: $primary-font-family;
   font-weight: 300;
   font-size: 100%;
 }
