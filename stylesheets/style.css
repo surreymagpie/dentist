@@ -415,18 +415,20 @@ label {
 
 .primary-content,
 .sidebar {
+  /* At small screen sizes, all sections are full-width */
   margin: 1.5rem 0;
   -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%; }
 
 @media (min-width: 500px) {
-  /** let sidebars share a row */
   .sidebar {
     -webkit-box-flex: 1;
-    -webkit-flex: 1 50%;
-    -ms-flex: 1 50%;
-    flex: 1 50%; } }
+    -webkit-flex: 1 49%;
+    -ms-flex: 1 49%;
+    flex: 1 49%; }
+    .sidebar + .sidebar {
+      margin-left: 2%; } }
 
 @media (min-width: 920px) {
   .primary-content {
@@ -439,6 +441,8 @@ label {
     -webkit-flex: 0 25%;
     -ms-flex: 0 25%;
     flex: 0 25%; }
+    .sidebar + .sidebar {
+      margin-left: 0; }
   .sidebar-left {
     -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
