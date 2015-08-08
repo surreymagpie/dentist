@@ -574,3 +574,26 @@ li > ol {
     padding-right: 1.5rem; }
   .sidebar-right {
     padding-left: 1.5rem; } }
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  .navbar ul ul {
+    display: none; }
+
+.navbar li {
+  list-style: none; }
+
+.navbar a {
+  display: block;
+  padding: 0.75em 1em;
+  color: inherit; }
+  .navbar a:hover,
+  .navbar a:focus,
+  .navbar a:active {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3); }
