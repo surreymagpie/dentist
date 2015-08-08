@@ -15,3 +15,5 @@ include_once 'includes/html.inc';
 include_once 'includes/node.inc';
 
 include_once 'includes/image.inc';
+
+include_once 'includes/css.inc';
