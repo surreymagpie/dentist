@@ -1,20 +1,29 @@
-@import "normalize";
-@import "variables";
-@import "mixins";
+// ITCSS inspired by Harry Roberts' and using Inuit CSS
+// 1-Settings
+@import "settings.variables";
+@import "bower_components/inuit-defaults/settings.defaults";
 
-@import "base";
+// 2-Tools
+@import "bower_components/inuit-functions/tools.functions";
+@import "bower_components/inuit-mixins/tools.mixins";
+
+// 3-Generic
+@import "bower_components/inuit-normalize/generic.normalize";
+@import "bower_components/inuit-box-sizing/generic.box-sizing";
+
+// 4-Base
+@import "bower_components/inuit-page/base.page";
+@import "base.page";
+@import "base.headers";
+@import "base.links";
+@import "bower_components/inuit-headings/base.headings";
+@import "bower_components/inuit-images/base.images";
+@import "bower_components/inuit-lists/base.lists";
+
+// 5-Objects
+@import "bower_components/inuit-tables/objects.tables";
 @import "layout";
 
-@media screen and (max-width:pem(700)){
-  // @import "mobile";
-}
+// 6-Components
 
-@media screen and (min-width:pem(701)){
-  // @import "wide";
-}
-
-@media screen and (max-width:pem(773)) and (min-width:pem(701)) {
-  .nav ul.menu li.leaf a, .nav ul.menu li.expanded a {
-    width: 6em;
-  }
-}
+// 7-Trumps
