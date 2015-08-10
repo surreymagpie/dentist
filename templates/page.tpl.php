@@ -1,10 +1,12 @@
 <div class="container">
 
-  <input type="checkbox" id="menu">  <!-- for small screens the checkbox toggles the menu -->
-
   <header class="site__header">
 
-    <label for="menu" onclick></label> <!-- for the checkbox -->
+    <?php if ($page['navbar']): ?>
+    <nav class="navbar">
+      <?php print render($page['navbar']); ?>
+    </nav>
+    <?php endif ?>
 
     <?php if($logo): ?>
     <div id="logo">
@@ -14,23 +16,17 @@
     </div>
     <?php endif; ?>
 
-    <?php if ($page['navbar']): ?>
-    <nav class="navbar">
-      <?php print render($page['navbar']); ?>
-    </nav>
+    <?php if ($site_name || $site_slogan): ?>
+      <div class="site__branding">
+        <?php if($site_name): ?>
+          <h1 class="site__name"><?php print $site_name; ?></h1>
+        <?php endif; ?>
+
+        <?php if($site_slogan): ?>
+          <h2 class="site__slogan"><?php print $site_slogan; ?></h2>
+        <?php endif; ?>
+      </div>
     <?php endif ?>
-
-    <?php if($site_name): ?>
-    <div id="site-name">
-      <h2><?php print $site_name; ?></h2>
-    </div>
-    <?php endif; ?>
-
-    <?php if($site_slogan): ?>
-    <div id="site-slogan">
-      <h2><?php print $site_slogan; ?></h2>
-    </div>
-    <?php endif; ?>
 
     <?php if ($page['header']): ?>
       <?php print render($page['header']); ?>
