@@ -7,7 +7,8 @@
 .site__banner {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: flex-end;
+  padding: $base-spacing 0;
 }
 
 .site__logo {
