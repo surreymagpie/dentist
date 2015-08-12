@@ -1,10 +1,13 @@
 .site__header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
   margin-bottom: $base-spacing;
   padding-bottom: $base-spacing;
   box-shadow: $box-shadow;
+}
+
+.site__banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .site__logo {

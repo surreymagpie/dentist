@@ -7,26 +7,27 @@
   <?php endif ?>
 
   <header class="site__header">
-
-    <?php if($logo): ?>
-    <div class="site__logo">
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-    </div>
-    <?php endif; ?>
-
-    <?php if ($site_name || $site_slogan): ?>
-      <div class="site__branding">
-        <?php if($site_name): ?>
-          <div class="site__name"><?php print $site_name; ?></div>
-        <?php endif; ?>
-
-        <?php if($site_slogan): ?>
-          <div class="site__slogan"><?php print $site_slogan; ?></div>
-        <?php endif; ?>
+    <div class="site__banner">
+      <?php if($logo): ?>
+      <div class="site__logo">
+        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
       </div>
-    <?php endif ?>
+      <?php endif; ?>
+
+      <?php if ($site_name || $site_slogan): ?>
+        <div class="site__branding">
+          <?php if($site_name): ?>
+            <div class="site__name"><?php print $site_name; ?></div>
+          <?php endif; ?>
+
+          <?php if($site_slogan): ?>
+            <div class="site__slogan"><?php print $site_slogan; ?></div>
+          <?php endif; ?>
+        </div>
+      <?php endif ?>
+    </div>
 
     <?php if ($page['header']): ?>
       <?php print render($page['header']); ?>
