@@ -1,15 +1,15 @@
 <div class="container">
 
+  <?php if ($page['navbar']): ?>
+  <nav class="navbar">
+    <?php print render($page['navbar']); ?>
+  </nav>
+  <?php endif ?>
+
   <header class="site__header">
 
-    <?php if ($page['navbar']): ?>
-    <nav class="navbar">
-      <?php print render($page['navbar']); ?>
-    </nav>
-    <?php endif ?>
-
     <?php if($logo): ?>
-    <div id="logo">
+    <div class="site__logo">
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
@@ -19,11 +19,11 @@
     <?php if ($site_name || $site_slogan): ?>
       <div class="site__branding">
         <?php if($site_name): ?>
-          <h1 class="site__name"><?php print $site_name; ?></h1>
+          <div class="site__name"><?php print $site_name; ?></div>
         <?php endif; ?>
 
         <?php if($site_slogan): ?>
-          <h2 class="site__slogan"><?php print $site_slogan; ?></h2>
+          <div class="site__slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
       </div>
     <?php endif ?>

@@ -1,0 +1,31 @@
+.site__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-bottom: $base-spacing;
+  padding-bottom: $base-spacing;
+  box-shadow: $box-shadow;
+}
+
+.site__logo {
+  margin-right: $base-spacing;
+  flex: 0 12em;
+}
+
+.site__branding {
+  flex: 1 24em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.site__name {
+  font-size: $inuit-heading-size-2;
+  margin-right: $base-spacing;
+}
+
+.site__slogan {
+  font-weight: 300;
+  font-size: $inuit-heading-size-3;
+}
