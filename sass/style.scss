@@ -19,6 +19,7 @@
 @import "bower_components/inuit-headings/base.headings";
 @import "bower_components/inuit-images/base.images";
 @import "bower_components/inuit-lists/base.lists";
+@import "base.forms";
 
 // 5-Objects
 @import "bower_components/inuit-tables/objects.tables";
@@ -30,3 +31,4 @@
 
 // 7-Theme
 @import "theme.header";
+@import "theme.buttons";
