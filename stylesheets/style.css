@@ -676,19 +676,26 @@ input[type="text"] {
   font-weight: 300;
   font-size: 23px; }
 
-[id="search-block-form"] .container-inline {
+[id="search-block-form"] {
   max-width: 32rem;
+  margin-left: auto; }
+
+.search-form .container-inline,
+[id="search-block-form"] .container-inline {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   margin-left: auto; }
 
+.search-form .form-item,
 [id="search-block-form"] .form-item {
+  margin-top: 0;
+  margin-bottom: 0;
   margin-right: 0.25em;
   -webkit-box-flex: 1;
   -webkit-flex: 1;

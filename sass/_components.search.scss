@@ -1,13 +1,21 @@
 [id="search-block-form"] {
+  max-width: 32rem;
+  margin-left: auto;
+}
+
+.search-form,
+[id="search-block-form"] {
+
   .container-inline {
-    max-width: 32rem;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     margin-left: auto;
   }
 
   // text box
   .form-item {
+    margin-top: 0;
+    margin-bottom: 0;
     margin-right: 0.25em;
     flex: 1;
   }
