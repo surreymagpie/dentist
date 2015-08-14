@@ -4,14 +4,14 @@ version = 1.1
 core = 7.x
 engine = phptemplate
 
+regions[page_top] = Page Top
 regions[navbar] = Navigation
 regions[header] = Header
 regions[highlighted] = Highlighted
 regions[content] = Content
-regions[footer] = Footer
 regions[sidebar_left] = Left Sidebar
 regions[sidebar_right] = Right Sidebar
-regions[page_top] = Page Top
+regions[footer] = Footer
 regions[page_bottom] = Page Bottom
 
 

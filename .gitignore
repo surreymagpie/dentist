@@ -1,3 +1,4 @@
 .sass-cache/
 node_modules/
 dentist.sublime-workspace
+bower_components/
