@@ -1,0 +1,61 @@
+/* All blocks */
+.block {
+  margin-bottom: $base-spacing;
+}
+
+/* Recent content block */
+.block-node {
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    padding: 0.3em;
+
+    &.edit,
+    &.delete {
+      text-align: center;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  .node-author {
+    font-size: 0.75em;
+    margin-left: $base-spacing / 3;
+    white-space: nowrap;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+/* Who's online, who's new,
+* Recent comments, Shortcuts*/
+.block-comment,
+.block-user,
+.block-system,
+.block-shortcut {
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+}
+
+.block-comment {
+  .item-list span {
+    font-size: 0.75em;
+    display: inline-block;
+    margin-left: $base-spacing / 3;
+  }
+}
+
+/* Powered by Drupal */
+#block-system-powered-by span {
+  display: block;
+  margin: 1em 0;
+}

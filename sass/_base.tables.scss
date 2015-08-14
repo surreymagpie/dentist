@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  background-color: #ededed;
+  border: {
+    width: 1px 1px 0;
+    style: solid;
+    color: lightgrey;
+  }
+  margin-bottom: $base-spacing;
+}
+
+tr {
+  border-bottom: 1px solid lightgrey;
+}

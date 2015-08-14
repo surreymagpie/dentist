@@ -420,7 +420,6 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 1.5rem;
   margin-bottom: 1.5rem; }
 
 a {
@@ -522,6 +521,17 @@ input[type="email"],
 input[type="number"],
 input[type="text"] {
   width: 100%; }
+
+table {
+  width: 100%;
+  background-color: #ededed;
+  border-width: 1px 1px 0;
+  border-style: solid;
+  border-color: lightgrey;
+  margin-bottom: 1.5rem; }
+
+tr {
+  border-bottom: 1px solid lightgrey; }
 
 /*------------------------------------*    #TABLES
 \*------------------------------------*/
@@ -675,6 +685,68 @@ input[type="text"] {
 .site__slogan {
   font-weight: 300;
   font-size: 23px; }
+
+.region-footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  .region-footer .block + .block {
+    margin-left: 1.5rem; }
+
+/* All blocks */
+.block {
+  margin-bottom: 1.5rem; }
+
+/* Recent content block */
+.block-node table {
+  width: 100%; }
+
+.block-node td {
+  padding: 0.3em; }
+  .block-node td.edit,
+  .block-node td.delete {
+    text-align: center; }
+    .block-node td.edit a,
+    .block-node td.delete a {
+      color: inherit; }
+
+.block-node .node-author {
+  font-size: 0.75em;
+  margin-left: 0.5rem;
+  white-space: nowrap; }
+  .block-node .node-author a {
+    color: inherit; }
+
+/* Who's online, who's new,
+* Recent comments, Shortcuts*/
+.block-comment ul,
+.block-user ul,
+.block-system ul,
+.block-shortcut ul {
+  list-style: none;
+  padding-left: 0; }
+
+.block-comment .item-list span {
+  font-size: 0.75em;
+  display: inline-block;
+  margin-left: 0.5rem; }
+
+/* Powered by Drupal */
+#block-system-powered-by span {
+  display: block;
+  margin: 1em 0; }
 
 [id="search-block-form"] {
   max-width: 32rem;
