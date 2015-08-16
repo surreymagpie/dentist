@@ -1,34 +1,15 @@
-$headers: "PT Serif", Georgia, Times, serif;
-$body: "Lato", Verdana, Arial, san-serif;
-$textColor: #666666;
-$crumbs: #5090f0; //base color of breadcrumb arrows
-$hcolor: #FFCF33;//invert($crumbs);
-$gradient: mix($hcolor, #ffffff, 40%);
-$sidebar: #f3f3f3;
-$experimental-support-for-svg: true;
-
-@function pem($px, $base: 16) {
-    @return ($px / $base) + em;
+/* Micro clearfix */
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: ' ';
+  }
+  &:after {
+    clear: both;
+  }
 }
 
-//mixins
-@mixin lists {
-  margin: 0;
-  padding: 1em;
-  list-style: none;
-  display: inline-block;
-}
-
-
-@mixin breadcrumbs{
-  content: ' ';
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  border-top: pem(48) solid transparent;
-  border-bottom: pem(48) solid transparent;
-  left: 100%;
-  top: 50%;
-  margin-top: pem(-48);
+@mixin spacing {
+  margin-bottom: $base-spacing;
 }
