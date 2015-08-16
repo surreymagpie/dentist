@@ -6,6 +6,7 @@
 // 2-Tools
 @import "bower_components/inuit-functions/tools.functions";
 @import "bower_components/inuit-mixins/tools.mixins";
+@import "tools.mixins";
 
 // 3-Generic
 @import "bower_components/inuit-normalize/generic.normalize";
@@ -32,6 +33,7 @@
 @import "components.footer";
 @import "components.blocks";
 @import "components.search";
+@import "components.articles";
 
 // 7-Theme
 @import "theme.header";

@@ -4,6 +4,7 @@
  *
  * github.com/inuitcss | inuitcss.com
  */
+/* Micro clearfix */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -414,17 +415,19 @@ html {
   font-family: "Lato", verdana, arial, sans-serif;
   font-weight: 300; }
 
+p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  margin-top: 0;
   margin-bottom: 1.5rem; }
 
 a {
   text-decoration: none;
-  color: orangered; }
+  color: lightseagreen; }
   a:hover,
   a:active,
   a:focus {
@@ -513,7 +516,7 @@ textarea {
   padding: 0.5em 1em;
   margin-bottom: 10px;
   border: 1px solid;
-  border-radius: 3px; }
+  border-radius: 4px; }
 
 input[type="text"],
 input[type="password"],
@@ -773,6 +776,112 @@ tr {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1; }
+
+.node-article {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 4px solid lightseagreen; }
+  .node-article:before,
+  .node-article:after {
+    display: table;
+    content: ' '; }
+  .node-article:after {
+    clear: both; }
+
+.article__metadata {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #eee;
+  color: #000;
+  font-size: 0.8em; }
+  .article__metadata:before,
+  .article__metadata:after {
+    display: table;
+    content: ' '; }
+  .article__metadata:after {
+    clear: both; }
+  .article__metadata .submitted {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    font-weight: 700; }
+
+.user-picture {
+  float: left;
+  margin-right: 5px; }
+  .user-picture img {
+    display: inline-block;
+    width: 32px; }
+
+.submitted__day,
+.submitted__month {
+  margin-right: 0.2em; }
+
+.submitted__day {
+  -webkit-box-ordinal-group: 0;
+  -webkit-order: -1;
+  -ms-flex-order: -1;
+  order: -1; }
+
+@media (min-width: 30rem) {
+  .node-article {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .article__content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+  .article__header,
+  .article__links {
+    -webkit-flex-basis: 100%;
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%; }
+  .article__metadata {
+    float: left;
+    margin-right: 0.75rem;
+    width: 8rem; }
+    .article__metadata .submitted {
+      display: block;
+      width: 5rem;
+      text-align: center; }
+      .article__metadata .submitted span {
+        display: block; }
+  .submitted {
+    margin: 1em auto; }
+    .submitted__month,
+    .submitted__year {
+      background-color: lightseagreen;
+      color: #fff; }
+    .submitted__day {
+      font-size: 5em;
+      color: orangered;
+      line-height: 1;
+      border-width: 0 1px;
+      border-color: lightseagreen;
+      border-style: solid;
+      margin-right: 0; }
+    .submitted__month {
+      margin-right: 0;
+      border-radius: 4px 4px 0 0; }
+    .submitted__year {
+      border-radius: 0 0 4px 4px; }
+  .article__author:before,
+  .article__author:after {
+    display: table;
+    content: ' '; }
+  .article__author:after {
+    clear: both; } }
 
 .site__slogan {
   font-style: italic;
