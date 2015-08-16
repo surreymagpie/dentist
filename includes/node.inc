@@ -4,7 +4,7 @@
   if($variables['type'] == 'article') {
    $date = $variables['node']->created;
    $variables['day'] = date('j', $date);
-   $variables['month'] = date('M', $date);
+   $variables['month'] = date('F', $date);
    $variables['year'] = date('Y', $date);
   }
 }

@@ -90,17 +90,20 @@
   <?php print render($title_suffix); ?>
   </header>
 
-  <aside class="article__metadata">
-  <?php print $user_picture; ?>
   <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <span><?php print $day; ?></span>
-      <span><?php print $month; ?></span>
-      <span><?php print $year; ?></span>
-    </div>
-  <?php endif; ?>
+  <aside class="article__metadata">
+  <div class="article__author">
+    <?php print $user_picture; ?>
+    <span>Written by <?php print $name; ?></span>
+  </div> <!-- /.article__author -->
+  <div class="submitted">
+    <span class="submitted__month"><?php print $month; ?></span>
+    <span class="submitted__day"><?php print $day; ?></span>
+    <span class="submitted__year"><?php print $year; ?></span>
+  </div>
   <?php print render($content['field_tags']); ?>
   </aside>
+  <?php endif; ?>
 
   <section class="article__content" <?php print $content_attributes; ?>>
       <?php
