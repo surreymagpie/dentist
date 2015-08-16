@@ -883,6 +883,19 @@ tr {
   .article__author:after {
     clear: both; } }
 
+ul.tabs {
+  margin-bottom: 1.5rem;
+  padding: 0;
+  border-bottom: 1px solid #999; }
+  ul.tabs li {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: #999;
+    border-radius: 4px 4px 0 0;
+    background-color: #eee; }
+
 .site__slogan {
   font-style: italic;
   font-weight: 300;
