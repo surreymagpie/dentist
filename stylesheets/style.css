@@ -585,7 +585,11 @@ tr {
   margin: 1.5rem 0;
   -webkit-flex-basis: 100%;
   -ms-flex-preferred-size: 100%;
-  flex-basis: 100%; }
+  flex-basis: 100%;
+  /* fix for overflowing images in Firefox */
+  max-width: -webkit-fill-available;
+  max-width: -moz-available;
+  max-width: fill-available; }
 
 @media (min-width: 500px) {
   .sidebar {
@@ -597,11 +601,18 @@ tr {
       margin-left: 2%; } }
 
 @media (min-width: 920px) {
-  .primary-content {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 50%;
-    -ms-flex: 1 50%;
-    flex: 1 50%; }
+  .one-sidebar .primary-content {
+    max-width: 75%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 75%;
+    -ms-flex: 0 75%;
+    flex: 0 75%; }
+  .two-sidebars .primary-content {
+    max-width: 50%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 50%;
+    -ms-flex: 0 50%;
+    flex: 0 50%; }
   .sidebar {
     -webkit-box-flex: 0;
     -webkit-flex: 0 25%;
@@ -641,6 +652,23 @@ tr {
   [id="block-system-main-menu"] a:active {
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.3); }
+
+.sf-menu.menu {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: black;
+  color: #fff;
+  padding-left: 0.5em; }
+  .sf-menu.menu li {
+    margin-right: 1em; }
+  .sf-menu.menu a {
+    display: block;
+    padding: 0.5em 0;
+    color: inherit; }
+    .sf-menu.menu a.menuparent {
+      padding-right: 2em; }
 
 .site__header {
   margin-bottom: 1.5rem;
