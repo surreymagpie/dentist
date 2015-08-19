@@ -3,6 +3,12 @@
   @include spacing;
   padding-bottom: $base-spacing;
   border-bottom: 4px solid $primary-colour;
+
+  .field-type-image {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
 }
 
 .article__metadata {
