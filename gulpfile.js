@@ -36,3 +36,9 @@ gulp.task('theme', shell.task([
     ]));
 
 gulp.task('default', ['serve']);
+
+gulp.task('minify-css', function() {
+  return gulp.src('stylesheets/style.css')
+  .pipe(minifyCss({compatibility: 'ie8'}))
+  .pipe(gulp.dest('stylesheets/min'));
+});
