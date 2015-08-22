@@ -948,6 +948,22 @@ ul.tabs {
   text-align: center;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3); }
 
+.staff__image {
+  margin: 0 1.5rem 1.5rem 0;
+  float: left; }
+  .staff__image img {
+    width: 150px; }
+
+.staff__label {
+  width: 9em;
+  padding: 0.5em;
+  font-weight: 700;
+  text-align: right;
+  border-right: 1px solid #D3D3D3; }
+
+.staff__field {
+  padding: 0.5em; }
+
 .site__slogan {
   font-style: italic;
   font-weight: 300;
