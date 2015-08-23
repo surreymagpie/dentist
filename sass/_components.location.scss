@@ -1,0 +1,15 @@
+.bus-data {
+  th,td {
+    padding: .5em;
+  }
+}
+
+.bus-number,
+.bus-operator {
+  text-align: center;
+  width: 8em;
+}
+
+.bus-number {
+  width: 5em;
+}

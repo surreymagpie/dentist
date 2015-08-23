@@ -964,6 +964,17 @@ ul.tabs {
 .staff__field {
   padding: 0.5em; }
 
+.bus-data th, .bus-data td {
+  padding: .5em; }
+
+.bus-number,
+.bus-operator {
+  text-align: center;
+  width: 8em; }
+
+.bus-number {
+  width: 5em; }
+
 .site__slogan {
   font-style: italic;
   font-weight: 300;
