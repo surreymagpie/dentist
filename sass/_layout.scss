@@ -1,75 +1,124 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .site__content {
-    flex: 1;
+  flex: 1;
 }
 
 .site__content,
 .site__header {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .content-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .primary-content,
 .sidebar {
-    /* At small screen sizes, all sections are full-width */
-    margin: $base-spacing 0;
-    flex-basis: 100%;
-    /* fix for overflowing images in Firefox */
-    max-width: fill-available;
+  /* At small screen sizes, all sections are full-width */
+  margin: $base-spacing 0;
+  flex-basis: 100%;
+  /* fix for overflowing images in Firefox */
+  max-width: fill-available;
 }
 
 @media (min-width: 500px) {
-    // let sidebars share a row
-    // but if only one exists, it can stretch across
-    .sidebar {
-        flex: 1 49%;
+  // let sidebars share a row
+  // but if only one exists, it can stretch across
+  .sidebar {
+    flex: 1 49%;
 
-        // enforce a margin when both exist
-        & + & {
-            margin-left: 2%;
-        }
+    // enforce a margin when both exist
+    & + & {
+      margin-left: 2%;
     }
+  }
 }
 
 @media (min-width: 920px) {
-    .one-sidebar .primary-content {
-        max-width: 75%;
-        flex: 0 75%;
+  .one-sidebar .primary-content {
+    max-width: 75%;
+    flex: 0 75%;
+  }
+
+  .two-sidebars .primary-content {
+    max-width: 50%;
+    flex: 0 50%;
+  }
+
+  .sidebar {
+    flex: 0 25%;
+
+    // clear the margin between the sidebars
+    & + & {
+      margin-left: 0;
+    }
+  }
+
+  .sidebar-left {
+    order: -1;
+    padding-right: $base-spacing;
+  }
+
+  .sidebar-right {
+    padding-left: $base-spacing;
+  }
+}
+
+/* Fallbacks for old brwosers, desktop only */
+
+.no-flexbox {
+  .content-wrapper {
+    @include clearfix;
+    position: relative
+  }
+
+  .primary-content,
+  .sidebar {
+    float: left;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative
+  }
+
+  .sidebar {
+    width: 23%;
+  }
+
+  .one-sidebar {
+    .primary-content {
+      width: 73%
     }
 
-    .two-sidebars .primary-content {
-        max-width: 50%;
-        flex: 0 50%;
-    }
+    &.left-sidebar {
+      .sidebar-left {
+        margin-left: -75%;
+      }
 
-    .sidebar {
-        flex: 0 25%;
-
-        // clear the margin between the sidebars
-        & + & {
-            margin-left: 0;
-        }
+      .primary-content {
+        left: 25%;
+      }
     }
+  }
+
+  .two-sidebars {
 
     .sidebar-left {
-        order: -1;
-        padding-right: $base-spacing;
+      margin-left: -75%;
     }
 
-    .sidebar-right {
-        padding-left: $base-spacing;
+    .primary-content {
+      margin-left: 25%;
+      width: 48%;
     }
+  }
 }

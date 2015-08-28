@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*!
+/*
  * inuitcss, by @csswizardry
  *
  * github.com/inuitcss | inuitcss.com
@@ -628,6 +628,41 @@ tr {
     padding-right: 1.5rem; }
   .sidebar-right {
     padding-left: 1.5rem; } }
+
+/* Fallbacks for old brwosers, desktop only */
+.no-flexbox .content-wrapper {
+  position: relative; }
+  .no-flexbox .content-wrapper:before,
+  .no-flexbox .content-wrapper:after {
+    display: table;
+    content: ' ';
+    clear: both; }
+
+.no-flexbox .primary-content,
+.no-flexbox .sidebar {
+  float: left;
+  padding-left: 1%;
+  padding-right: 1%;
+  position: relative; }
+
+.no-flexbox .sidebar {
+  width: 23%; }
+
+.no-flexbox .one-sidebar .primary-content {
+  width: 73%; }
+
+.no-flexbox .one-sidebar.left-sidebar .sidebar-left {
+  margin-left: -75%; }
+
+.no-flexbox .one-sidebar.left-sidebar .primary-content {
+  left: 25%; }
+
+.no-flexbox .two-sidebars .sidebar-left {
+  margin-left: -75%; }
+
+.no-flexbox .two-sidebars .primary-content {
+  margin-left: 25%;
+  width: 48%; }
 
 [id="block-system-main-menu"] ul {
   list-style: none;
