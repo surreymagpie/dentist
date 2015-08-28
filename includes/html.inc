@@ -15,13 +15,20 @@ function dentist_preprocess_html(&$variables) {
     'scope' => 'footer',
   ));
 
-  drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js', array(
-        'group' => CSS_THEME,
-        '#browsers' => array(
-          'IE' => 'lte IE 9', // This targets IE less than or equal to (lte) 8
-          '!IE' => FALSE),
-        'preprocess' => FALSE)
-  );
+  // Adds a conditional comment around the script tag for html5 shiv
+  $script = array(
+      '#theme' => 'html_tag',
+      '#tag' => 'script',
+      '#value' => '', // necessary to prevent a self-closing tag
+      '#attributes' => array(
+        'type' => 'text/javascript',
+        'src' => 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js',
+      ),
+      '#browsers' => array('IE' => 'lte IE 9', '!IE' => FALSE),
+      '#pre_render' => array('drupal_pre_render_conditional_comments'),
+    );
+
+  $variables['ie_scripts'] = drupal_render($script);
 
   drupal_add_css('http://fonts.googleapis.com/css?family=Lato:400,700,300,100', array(
     'type' => 'external',
