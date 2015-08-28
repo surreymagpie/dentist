@@ -10,10 +10,18 @@
 
 function dentist_preprocess_html(&$variables) {
 
-  drupal_add_js( path_to_theme() .'/scripts/modernizr.min.js', array(
-    'type' => 'file',
+  drupal_add_js( 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(
+    'type' => 'external',
     'scope' => 'footer',
   ));
+
+  drupal_add_js('https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js', array(
+        'group' => CSS_THEME,
+        '#browsers' => array(
+          'IE' => 'lte IE 9', // This targets IE less than or equal to (lte) 8
+          '!IE' => FALSE),
+        'preprocess' => FALSE)
+  );
 
   drupal_add_css('http://fonts.googleapis.com/css?family=Lato:400,700,300,100', array(
     'type' => 'external',
