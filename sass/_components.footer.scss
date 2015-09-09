@@ -1,11 +1,20 @@
 .region-footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
 
-  .block + .block {
-    margin-left: $base-spacing;
+ .block {
+	  padding: 0 0.5em;
   }
 }
 
+@media (min-width: 40em) {
+	.region-footer {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+	
+   .block {
+    float:left;
+    width: 280px;
+    flex: 1 0 280px;
+  }
+ }
+}

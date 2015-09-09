@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*
+/*!
  * inuitcss, by @csswizardry
  *
  * github.com/inuitcss | inuitcss.com
@@ -749,24 +749,29 @@ tr {
   content: ' ';
   clear: both; }
 
-.region-footer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: start;
-  -webkit-align-items: flex-start;
-  -ms-flex-align: start;
-  align-items: flex-start; }
-  .region-footer .block + .block {
-    margin-left: 1.5rem; }
+.region-footer .block {
+  padding: 0 0.5em; }
+
+@media (min-width: 40em) {
+  .region-footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+    .region-footer .block {
+      float: left;
+      width: 280px;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 0 280px;
+      -ms-flex: 1 0 280px;
+      flex: 1 0 280px; } }
 
 /* All blocks */
 /* Recent content block */
@@ -791,10 +796,7 @@ tr {
 
 /* Who's online, who's new,
 * Recent comments, Shortcuts*/
-.block-comment ul,
-.block-user ul,
-.block-system ul,
-.block-shortcut ul {
+.block ul {
   list-style: none;
   padding-left: 0; }
 
