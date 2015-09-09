@@ -940,6 +940,9 @@ tr {
     content: ' ';
     clear: both; } }
 
+.sidebar .node-article {
+  display: block; }
+
 ul.tabs {
   margin-bottom: 1.5rem;
   padding: 0;
