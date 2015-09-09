@@ -1,0 +1,20 @@
+.review-list {
+  display: flex;
+  overflow: hidden;
+  list-style: none;
+  padding-left: 0;
+}
+
+.review-list__item {
+  float: left;
+  margin-right: 1em;
+}
+
+.review-list__item a {
+  display: block;
+  padding: 1em 0.5em;
+  // background: #dedede;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
