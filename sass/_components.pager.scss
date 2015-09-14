@@ -1,0 +1,21 @@
+.pager {
+	text-align:center;
+	font-size: 0;
+
+	li {
+		display: inline-block;
+		font-size: 0.9rem;
+		border-top: 1px solid #dedede;
+		border-bottom: 1px solid #dedede;
+		border-right: 1px solid #dedede;
+		padding: 0.5em;
+		width: 3.5em;
+
+		&.first {
+			border-left: 1px solid #dedede;
+		}
+	}
+	
+}
+
+
