@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/*
+/*!
  * inuitcss, by @csswizardry
  *
  * github.com/inuitcss | inuitcss.com
@@ -1032,18 +1032,30 @@ ul.tabs {
   border: 1px solid; }
 
 .pager {
-  text-align: center;
-  font-size: 0; }
-  .pager li {
-    display: inline-block;
-    font-size: 0.9rem;
-    border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
-    border-right: 1px solid #dedede;
-    padding: 0.5em;
-    width: 3.5em; }
-    .pager li.first {
-      border-left: 1px solid #dedede; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center; }
+  .pager a {
+    display: block;
+    padding: 1em 0.75em; }
+
+[class^="pager-"] {
+  display: inline-block; }
+  [class^="pager-"]:not(:first-child) {
+    margin-left: 0.25em; }
+
+.pager-current {
+  font-weight: 700;
+  padding: 1em 0.75em; }
 
 .site__slogan {
   font-style: italic;

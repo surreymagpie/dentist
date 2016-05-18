@@ -1,21 +1,27 @@
+$pager-padding: 1em 0.75em;
+
 .pager {
-	text-align:center;
-	font-size: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
 
-	li {
-		display: inline-block;
-		font-size: 0.9rem;
-		border-top: 1px solid #dedede;
-		border-bottom: 1px solid #dedede;
-		border-right: 1px solid #dedede;
-		padding: 0.5em;
-		width: 3.5em;
-
-		&.first {
-			border-left: 1px solid #dedede;
-		}
+	a {
+		display: block;
+		padding: $pager-padding;
 	}
-	
 }
 
+[class^="pager-"]	{
+		display: inline-block;
+		// border: 1px solid #ccc;
+		// width: 3em;
+		&:not(:first-child) {
+			margin-left: 0.25em;
+		}
+}
 
+.pager-current {
+	font-weight: 700;
+	padding: $pager-padding;
+}

@@ -9,7 +9,6 @@ function dentist_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-
 include_once 'includes/html.inc';
 
 include_once 'includes/node.inc';
@@ -27,4 +26,9 @@ function dentist_preprocess_image(&$variables) {
   foreach (array('width', 'height') as $key) {
     unset($variables[$key]);
   }
+}
+
+function dentist_pager($variables) {
+  $variables['tags'] = array('<<','<', 0,'>','>>');
+  return theme_pager($variables);
 }
