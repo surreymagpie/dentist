@@ -30,7 +30,7 @@ function dentist_preprocess_html(&$variables) {
 
   $variables['ie_scripts'] = drupal_render($script);
 
-  drupal_add_css('http://fonts.googleapis.com/css?family=Lato:400,700,300,100', array(
+  drupal_add_css('//fonts.googleapis.com/css?family=Lato:400,700,300,100', array(
     'type' => 'external',
     'group' => 'CSS_THEME'
   ));
