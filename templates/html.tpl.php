@@ -43,9 +43,9 @@
  * @ingroup themeable
  */
 ?><!DOCTYPE html>
-<html <?php print $html_attributes; ?> xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" <?php print $rdf_namespaces; ?>>
+<html <?php print $html_attributes; ?> xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" <?php print $rdf_namespaces; ?>>
 
-<head profile="<?php print $grddl_profile; ?>">
+<head>
   <?php print $ie_scripts; ?>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
