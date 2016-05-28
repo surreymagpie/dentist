@@ -93,7 +93,7 @@
   <?php if ($display_submitted): ?>
   <aside class="article__metadata">
   <div class="article__author">
-    <?php print $user_picture; ?>
+    <?php print $user_image; ?>
     <span>Written by <?php print $name; ?></span>
   </div> <!-- /.article__author -->
   <div class="submitted">

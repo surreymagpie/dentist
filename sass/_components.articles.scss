@@ -26,19 +26,14 @@
   }
 }
 
-.user-picture {
+.article__author-image {
   float: left;
-  margin-right: 5px;
-
-  img {
-    display: inline-block;
-    width: 32px;
-  }
+  margin-right: 0.25em;
 }
 
 .submitted__day,
 .submitted__month {
-  margin-right: 0.2em;
+  margin-right: 0.25em;
 }
 
 .submitted__day {
