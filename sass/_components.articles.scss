@@ -13,17 +13,8 @@
 
 .article__metadata {
   @include clearfix;
-  padding: $base-spacing/2;
   margin-bottom: $base-spacing/2;
-  border: 1px solid #eee;
   color: #000;
-  font-size: 0.8em;
-
-  // Needs to be nested to isolate from the comment .submitted styles
-  .submitted {
-    display: flex;
-    font-weight: 700;
-  }
 }
 
 .article__author-image {
@@ -31,81 +22,7 @@
   margin-right: 0.25em;
 }
 
-.submitted__day,
-.submitted__month {
-  margin-right: 0.25em;
-}
-
-.submitted__day {
-  order: -1;
-}
-
-@media (min-width: 30rem) {
-  .node-article {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .article__content {
-    flex: 1;
-  }
-
-  .article__header,
-  .article__links {
-    flex-basis: 100%;
-  }
-
-  .article__metadata {
-    float: left; // fallback for flexbox
-    margin-right: $base-spacing/2;
-    width: 8rem;
-
-    .submitted {
-      display: block;
-      width: 5rem;
-      text-align: center;
-
-      span {
-        display: block;
-      }
-    }
-  }
-
-  .submitted {
-    margin: 1em auto;
-
-    &__month,
-    &__year {
-      background-color: $primary-colour;
-      color: #fff;
-    }
-
-    &__day {
-      font-size: 5em;
-      color: $accent-colour;
-      line-height: 1;
-      border: {
-        width: 0 1px;
-        color: $primary-colour;
-        style: solid;
-      }
-      margin-right: 0;
-    }
-    &__month {
-      margin-right: 0;
-      border-radius: $border-radius $border-radius 0 0;
-    }
-    &__year {
-      border-radius: 0 0 $border-radius $border-radius;
-    }
-  }
-
-  .article__author {
-    @include clearfix;
-  }
-}
-
-.sidebar .node-article {
-  display: block;
+[class^="submitted__"] {
+  display: inline-block;
+  font-weight: 700;
 }

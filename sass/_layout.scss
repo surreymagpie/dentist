@@ -31,7 +31,7 @@
   max-width: fill-available;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 30rem) {
   // let sidebars share a row
   // but if only one exists, it can stretch across
   .sidebar {
@@ -40,7 +40,7 @@
   }
 }
 
-@media (min-width: 920px) {
+@media (min-width: 60rem) {
   .one-sidebar .primary-content {
     max-width: 75%;
     flex-basis: 75%;

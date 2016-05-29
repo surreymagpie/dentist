@@ -92,15 +92,15 @@
 
   <?php if ($display_submitted): ?>
   <aside class="article__metadata">
-  <div class="article__author">
-    <?php print $user_image; ?>
-    <span>Written by <?php print $name; ?></span>
-  </div> <!-- /.article__author -->
-  <div class="submitted">
-    <span class="submitted__month"><?php print $month; ?></span>
-    <span class="submitted__day"><?php print $day; ?></span>
-    <span class="submitted__year"><?php print $year; ?></span>
-  </div>
+    <div class="article__author">
+      <?php print $user_image; ?>
+      <span>Written by <?php print $name; ?></span>
+    </div> <!-- /.article__author -->
+    <div class="submitted">
+      <span class="submitted__day"><?php print $day; ?></span>
+      <span class="submitted__month"><?php print $month; ?></span>
+      <span class="submitted__year"><?php print $year; ?></span>
+    </div>
   <?php print render($content['field_tags']); ?>
   </aside>
   <?php endif; ?>

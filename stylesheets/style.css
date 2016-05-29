@@ -591,7 +591,7 @@ tr {
   max-width: -moz-available;
   max-width: fill-available; }
 
-@media (min-width: 500px) {
+@media (min-width: 30rem) {
   .sidebar {
     -webkit-flex-basis: 49%;
     -ms-flex-preferred-size: 49%;
@@ -601,7 +601,7 @@ tr {
     -ms-flex-positive: 1;
     flex-grow: 1; } }
 
-@media (min-width: 920px) {
+@media (min-width: 60rem) {
   .one-sidebar .primary-content {
     max-width: 75%;
     -webkit-flex-basis: 75%;
@@ -848,100 +848,21 @@ tr {
     margin-bottom: 1em; }
 
 .article__metadata {
-  padding: 0.75rem;
   margin-bottom: 0.75rem;
-  border: 1px solid #eee;
-  color: #000;
-  font-size: 0.8em; }
+  color: #000; }
   .article__metadata:before,
   .article__metadata:after {
     display: table;
     content: ' ';
     clear: both; }
-  .article__metadata .submitted {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    font-weight: 700; }
 
-.user-picture {
+.article__author-image {
   float: left;
-  margin-right: 5px; }
-  .user-picture img {
-    display: inline-block;
-    width: 32px; }
+  margin-right: 0.25em; }
 
-.submitted__day,
-.submitted__month {
-  margin-right: 0.2em; }
-
-.submitted__day {
-  -webkit-box-ordinal-group: 0;
-  -webkit-order: -1;
-  -ms-flex-order: -1;
-  order: -1; }
-
-@media (min-width: 30rem) {
-  .node-article {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start; }
-  .article__content {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1; }
-  .article__header,
-  .article__links {
-    -webkit-flex-basis: 100%;
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%; }
-  .article__metadata {
-    float: left;
-    margin-right: 0.75rem;
-    width: 8rem; }
-    .article__metadata .submitted {
-      display: block;
-      width: 5rem;
-      text-align: center; }
-      .article__metadata .submitted span {
-        display: block; }
-  .submitted {
-    margin: 1em auto; }
-    .submitted__month,
-    .submitted__year {
-      background-color: lightseagreen;
-      color: #fff; }
-    .submitted__day {
-      font-size: 5em;
-      color: orangered;
-      line-height: 1;
-      border-width: 0 1px;
-      border-color: lightseagreen;
-      border-style: solid;
-      margin-right: 0; }
-    .submitted__month {
-      margin-right: 0;
-      border-radius: 4px 4px 0 0; }
-    .submitted__year {
-      border-radius: 0 0 4px 4px; }
-  .article__author:before,
-  .article__author:after {
-    display: table;
-    content: ' ';
-    clear: both; } }
-
-.sidebar .node-article {
-  display: block; }
+[class^="submitted__"] {
+  display: inline-block;
+  font-weight: 700; }
 
 ul.tabs {
   margin-bottom: 1.5rem;
