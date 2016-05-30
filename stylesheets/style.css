@@ -803,6 +803,13 @@ tr {
   display: inline-block;
   font-weight: 700; }
 
+.feed-icon {
+  display: block;
+  height: 16px;
+  width: 16px; }
+  .feed-icon img {
+    vertical-align: top; }
+
 ul.tabs {
   margin-bottom: 1.5rem;
   padding: 0;
@@ -910,10 +917,3 @@ input[type="submit"] {
   input[type="submit"]:hover,
   input[type="submit"]:focus {
     background-color: #24c8bf; }
-
-.sharethis-buttons {
-  box-sizing: content-box !important; }
-  .sharethis-buttons:before, .sharethis-buttons:after {
-    display: table;
-    content: ' ';
-    clear: both; }
