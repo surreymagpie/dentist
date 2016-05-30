@@ -1,0 +1,10 @@
+img {
+  height: auto;
+  width: 100%;
+}
+
+// Don't fill container when sizes are set
+img[width],
+img[height] {
+  width: initial;
+}
