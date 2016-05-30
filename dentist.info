@@ -1,6 +1,6 @@
 name = dentist
 description = A responsive theme for my own website
-version = 2.0.2
+version = 2.0.5
 core = 7.x
 engine = phptemplate
 
@@ -15,4 +15,4 @@ regions[footer] = Footer
 regions[page_bottom] = Page Bottom
 
 
-stylesheets[all][] = stylesheets/style.css
+stylesheets[all][] = stylesheets/style.min.css

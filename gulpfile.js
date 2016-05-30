@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var shell = require('gulp-shell');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 
@@ -18,6 +20,9 @@ gulp.task('sass', function() {
             browsers: ['last 2 versions', '> 1%'],
             cascade: false
         }))
+        .pipe(gulp.dest(src.css))
+        .pipe(cssmin({keepSpecialComments: 0}))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(src.css))
         .pipe(browserSync.stream());
 });
@@ -37,8 +42,9 @@ gulp.task('theme', shell.task([
 
 gulp.task('default', ['serve']);
 
-gulp.task('minify-css', function() {
+gulp.task('cssmin', function() {
   return gulp.src('stylesheets/style.css')
-  .pipe(minifyCss({compatibility: 'ie8'}))
-  .pipe(gulp.dest('stylesheets/min'));
+  .pipe(cssmin({keepSpecialComments: 0}))
+  .pipe(rename({suffix: '.min'}))
+  .pipe(gulp.dest(src.css));
 });
