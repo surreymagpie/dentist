@@ -17,17 +17,6 @@ include_once 'includes/block.inc';
 
 include_once 'includes/css.inc';
 
-/**
-*   Implements theme_proprocess_hook
-*/
-function dentist_preprocess_image(&$variables) {
-
-  // remove width and height attributes so that we can style with CSS
-  foreach (array('width', 'height') as $key) {
-    unset($variables[$key]);
-  }
-}
-
 function dentist_pager($variables) {
   $variables['tags'] = array('<<','<', 0,'>','>>');
   return theme_pager($variables);
