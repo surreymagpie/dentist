@@ -1,0 +1,27 @@
+.user-picture {
+    width: 32px;
+    height: 48px;
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.2);
+    padding: 0.5em;
+    margin-bottom: $base-spacing;
+
+    &-wrapper {
+        border-top: 2px solid;
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    .content {
+        margin: $base-spacing 0;
+    }
+
+
+}
