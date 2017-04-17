@@ -25,5 +25,8 @@
     "inuit-page": "~0.2.1",
     "inuit-headings": "~0.3.1",
     "inuit-tables": "~0.2.1"
+  },
+  "resolutions": {
+    "inuit-normalize": "~4.1.1"
   }
 }
