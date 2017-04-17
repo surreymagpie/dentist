@@ -1,6 +1,6 @@
 name = dentist
 description = A responsive theme for my own website
-version = 2.0.5
+version = 2.0.6
 core = 7.x
 engine = phptemplate
 
