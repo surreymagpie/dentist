@@ -56,3 +56,24 @@
   display: block;
   margin: 1em 0;
 }
+
+/* User menu block */
+
+#block-system-user-menu {
+  display: flex;
+  justify-content: flex-end;
+  background: #333;
+
+  .menu {
+    margin: 0;
+    display: inline-flex;
+  }
+
+  li {
+    margin-left: $base-spacing;
+  }
+
+  a {
+    color: #fff;
+  }
+}

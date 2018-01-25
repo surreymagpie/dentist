@@ -763,6 +763,25 @@ tr {
   display: block;
   margin: 1em 0; }
 
+/* User menu block */
+#block-system-user-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  background: #333; }
+  #block-system-user-menu .menu {
+    margin: 0;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  #block-system-user-menu li {
+    margin-left: 1.5rem; }
+  #block-system-user-menu a {
+    color: #fff; }
+
 [id="search-block-form"] {
   max-width: 32rem;
   margin-left: auto; }
