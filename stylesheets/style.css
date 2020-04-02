@@ -532,17 +532,13 @@ tr {
   width: 100%; }
 
 .container {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh; }
 
 .site__content {
-  -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1; }
 
@@ -552,12 +548,10 @@ tr {
   padding-right: 0.5rem; }
 
 .content-wrapper {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   max-width: 1200px;
@@ -571,14 +565,12 @@ tr {
   flex-basis: 100%;
   /* fix for overflowing images in Firefox */
   max-width: -webkit-fill-available;
-  max-width: -moz-available;
   max-width: fill-available; }
 
 @media (min-width: 30rem) {
   .sidebar {
     -ms-flex-preferred-size: 49%;
     flex-basis: 49%;
-    -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; } }
 
@@ -592,13 +584,11 @@ tr {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%; }
   .sidebar {
-    -webkit-box-flex: 0;
     -ms-flex-positive: 0;
     flex-grow: 0;
     -ms-flex-preferred-size: 24%;
     flex-basis: 24%; }
   .sidebar-left {
-    -webkit-box-ordinal-group: 0;
     -ms-flex-order: -1;
     order: -1; } }
 
@@ -640,7 +630,6 @@ tr {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
   [id="block-system-main-menu"] ul ul {
@@ -663,35 +652,28 @@ tr {
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); }
 
 .site__banner {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
   padding: 1.5rem 0; }
 
 .site__logo {
   margin-right: 1.5rem;
-  -webkit-box-flex: 0;
   -ms-flex: 0 12em;
   flex: 0 12em; }
 
 .site__branding {
-  -webkit-box-flex: 1;
   -ms-flex: 1 24em;
   flex: 1 24em;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: baseline;
   -ms-flex-align: baseline;
   align-items: baseline; }
 
@@ -713,18 +695,15 @@ tr {
 
 @media (min-width: 40em) {
   .region-footer {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
     .region-footer .block {
       float: left;
       width: 280px;
-      -webkit-box-flex: 1;
       -ms-flex: 1 0 280px;
       flex: 1 0 280px; } }
 
@@ -765,16 +744,13 @@ tr {
 
 /* User menu block */
 #block-system-user-menu {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
   background: #333; }
   #block-system-user-menu .menu {
     margin: 0;
-    display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex; }
   #block-system-user-menu li {
@@ -782,16 +758,20 @@ tr {
   #block-system-user-menu a {
     color: #fff; }
 
+.highlighted {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  background-color: #ffffc9;
+  padding: 3rem 3rem 1.5rem; }
+
 [id="search-block-form"] {
   max-width: 32rem;
   margin-left: auto; }
 
 .search-form .container-inline,
 [id="search-block-form"] .container-inline {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
   margin-left: auto; }
@@ -801,7 +781,6 @@ tr {
   margin-top: 0;
   margin-bottom: 0;
   margin-right: 0.25em;
-  -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1; }
 
@@ -882,10 +861,8 @@ ul.tabs {
 .team {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
   .team:before, .team:after {
@@ -915,7 +892,6 @@ ul.tabs {
   width: 5em; }
 
 .review-list {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
@@ -933,12 +909,10 @@ ul.tabs {
   border: 1px solid; }
 
 .pager {
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   text-align: center; }

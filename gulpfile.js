@@ -29,7 +29,7 @@ gulp.task('sass', function() {
 
 gulp.task('serve', ['sass'], function() {
     browserSync.init({
-        proxy: "drupal.dev",
+        proxy: "d7.cornerhouse-dental.co.uk",
     });
 
     gulp.watch(src.scss, ['sass']);
