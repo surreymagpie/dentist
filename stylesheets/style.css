@@ -372,7 +372,8 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-/*------------------------------------*    #BOX-SIZING
+/*------------------------------------*\
+    #BOX-SIZING
 \*------------------------------------*/
 /**
  * Set the global `box-sizing` state to `border-box`.
@@ -386,7 +387,8 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
-/*------------------------------------*    #PAGE
+/*------------------------------------*\
+    #PAGE
 \*------------------------------------*/
 /**
  * High-, page-level styling.
@@ -442,7 +444,8 @@ a {
   a:hover, a:active, a:focus {
     text-decoration: underline; }
 
-/*------------------------------------*    #HEADINGS
+/*------------------------------------*\
+    #HEADINGS
 \*------------------------------------*/
 /**
  * Headings 1–6.
@@ -485,7 +488,8 @@ img[width],
 img[height] {
   width: initial; }
 
-/*------------------------------------*    #LISTS
+/*------------------------------------*\
+    #LISTS
 \*------------------------------------*/
 /**
  * Remove extra vertical spacing when nesting lists.
@@ -517,21 +521,26 @@ input[type="text"] {
 
 table {
   width: 100%;
-  background-color: #ededed;
-  border-width: 1px 1px 0;
+  border-width: 1px;
   border-style: solid;
   border-color: lightgrey;
+  border-collapse: collapse;
   margin-bottom: 1.5rem; }
 
-tr {
-  border-bottom: 1px solid lightgrey; }
+thead, tr:nth-child(even) {
+  background-color: #ededed; }
 
-/*------------------------------------*    #TABLES
+th, td {
+  border: 1px solid #666666;
+  padding: 8px; }
+
+/*------------------------------------*\
+    #TABLES
 \*------------------------------------*/
 .table {
   width: 100%; }
 
-.container {
+.site {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -542,10 +551,11 @@ tr {
   -ms-flex-positive: 1;
   flex-grow: 1; }
 
-.site__content,
-.site__header {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem; }
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  width: 94%; }
 
 .content-wrapper {
   display: -ms-flexbox;
@@ -555,12 +565,13 @@ tr {
   -ms-flex-pack: justify;
   justify-content: space-between;
   max-width: 1200px;
-  margin: auto; }
+  margin: auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
 
 .primary-content,
 .sidebar {
   /* At small screen sizes, all sections are full-width */
-  margin: 1.5rem 0;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   /* fix for overflowing images in Firefox */
@@ -647,9 +658,7 @@ tr {
     background-color: rgba(0, 0, 0, 0.3); }
 
 .site__header {
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3); }
+  padding-bottom: 3rem; }
 
 .site__banner {
   display: -ms-flexbox;
@@ -690,24 +699,22 @@ tr {
   content: ' ';
   clear: both; }
 
-.region-footer .block {
-  padding: 0 0.5em; }
+.region-footer {
+  display: grid;
+  gap: 2rem; }
+  @media (min-width: 44rem) {
+    .region-footer {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 55em) {
+    .region-footer {
+      grid-template-columns: auto auto 320px 1fr; } }
 
-@media (min-width: 40em) {
-  .region-footer {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: start;
-    align-items: flex-start; }
-    .region-footer .block {
-      float: left;
-      width: 280px;
-      -ms-flex: 1 0 280px;
-      flex: 1 0 280px; } }
+.day {
+  text-align: left; }
 
-/* All blocks */
+.time {
+  text-align: center; }
+
 /* Recent content block */
 .block-node table {
   width: 100%; }
@@ -759,10 +766,8 @@ tr {
     color: #fff; }
 
 .highlighted {
-  max-width: 1200px;
-  margin: 1.5rem auto;
   background-color: #ffffc9;
-  padding: 3rem 3rem 1.5rem; }
+  padding: 3rem 0; }
 
 [id="search-block-form"] {
   max-width: 32rem;

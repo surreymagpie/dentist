@@ -1,14 +1,19 @@
 table {
   width: 100%;
-  background-color: #ededed;
   border: {
-    width: 1px 1px 0;
+    width: 1px;
     style: solid;
     color: lightgrey;
+    collapse: collapse
   }
   margin-bottom: $base-spacing;
 }
 
-tr {
-  border-bottom: 1px solid lightgrey;
+thead, tr:nth-child(even) {
+    background-color: #ededed;
+}
+
+th, td {
+  border: 1px solid #666666;
+  padding: 8px;
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="site">
 
   <?php if ($page['navbar']): ?>
   <nav class="navbar">
@@ -7,6 +7,7 @@
   <?php endif ?>
 
   <header class="site__header">
+	<div class="container">
     <div class="site__banner">
       <?php if($logo): ?>
       <div class="site__logo">
@@ -31,22 +32,30 @@
 
     <?php if ($page['header']): ?>
       <?php print render($page['header']); ?>
-    <?php endif ?>
+	<?php endif ?>
+	</div> <!-- .container -->
   </header> <!-- /.site__header -->
 
   <main id="main-content" class="site__content">
+	  
 
-    <?php if($breadcrumb){print $breadcrumb;}?>
+  <?php if($page['highlighted']): ?>
+		<section class="highlighted">
+			<div class="container">
+				<?php print render($page['highlighted']); ?>
+			</div>
+		</section>
+	<?php endif; ?>
+
+	<?php if($breadcrumb): ?>
+		<div class="breadcrumb container">
+			<?php print $breadcrumb; ?>
+		</div>
+	<?php endif; ?>
 
     <?php print $messages; ?> <!-- status and error messages appear here -->
 
-    <?php if($page['highlighted']): ?>
-      <section class="highlighted">
-      <?php print render($page['highlighted']); ?>
-      </section>
-    <?php endif; ?>
-
-    <div class="content-wrapper">
+    <div class="content-wrapper container">
       <section class="primary-content">
         <?php print render($title_prefix); ?>
         <?php if($title): ?>
@@ -89,9 +98,11 @@
   </main> <!-- /#main-content.site__content-->
 
   <footer class="site__footer">
-    <?php if($page['footer']): ?>
-  		<?php print render($page['footer']); ?>
+	<div class="container">
+		<?php if($page['footer']): ?>
+			<?php print render($page['footer']); ?>
 		<?php endif; ?>
+	</div>
   </footer> <!-- /.site__footer -->
 
-</div> <!-- /#container -->
+</div> <!-- .site -->

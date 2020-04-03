@@ -1,7 +1,5 @@
 .site__header {
-  margin-bottom: $base-spacing;
-  padding-bottom: $base-spacing;
-  box-shadow: $box-shadow;
+  padding-bottom: 2 * $base-spacing;
 }
 
 .site__banner {
@@ -33,7 +31,6 @@
   font-weight: 300;
   font-size: $inuit-heading-size-3;
 }
-
 
 .navbar {
   @include clearfix;

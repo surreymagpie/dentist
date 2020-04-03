@@ -1,8 +1,3 @@
-/* All blocks */
-.block {
-  // margin-bottom: $base-spacing;
-}
-
 /* Recent content block */
 .block-node {
 
@@ -78,8 +73,6 @@
   }
 }
 .highlighted {
-  max-width: 1200px;
-  margin: 1.5rem auto;
   background-color: #ffffc9;
-  padding: 3rem 3rem 1.5rem;
+  padding: 3rem 0;
 }

@@ -1,20 +1,20 @@
 .region-footer {
+  display: grid;
+  gap: 2rem;
 
- .block {
-	  padding: 0 0.5em;
+  @media (min-width: 44rem) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 55em) {
+    grid-template-columns: auto auto 320px 1fr;
   }
 }
 
-@media (min-width: 40em) {
-	.region-footer {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: flex-start;
-	
-   .block {
-    float:left;
-    width: 280px;
-    flex: 1 0 280px;
-  }
- }
+.day {
+  text-align: left;
+}
+
+.time {
+  text-align: center;
 }
