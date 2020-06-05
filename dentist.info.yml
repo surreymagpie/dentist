@@ -1,0 +1,19 @@
+name: dentist
+description: A responsive theme for my own website
+type: theme
+core: 8.x
+version: 1.x-alpha
+base theme: classy
+libraries:
+  - dentist/global-styling
+
+regions:
+  page_top: Page Top
+  navbar: Navigation
+  header: Header
+  highlighted: Highlighted
+  content: Content
+  sidebar_left: Left Sidebar
+  sidebar_right: Right Sidebar
+  footer: Footer
+  page_bottom: Page Bottom
