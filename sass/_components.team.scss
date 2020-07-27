@@ -1,8 +1,8 @@
 .team {
   @include clearfix;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  display: flex;
 
   &-member {
     float: left;
