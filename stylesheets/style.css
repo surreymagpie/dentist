@@ -382,9 +382,13 @@ textarea {
  * paulirish.com/2012/box-sizing-border-box-ftw
  */
 html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 *, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
 /*------------------------------------*\
@@ -540,19 +544,12 @@ th, td {
 .table {
   width: 100%; }
 
-<<<<<<< HEAD
 .site {
-=======
-.container {
->>>>>>> 73927e6... Style highlighted block
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh; }
 
 .site__content {
-  -ms-flex-positive: 1;
   flex-grow: 1; }
 
 .container {
@@ -562,11 +559,8 @@ th, td {
   width: 94%; }
 
 .content-wrapper {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   max-width: 1200px;
   margin: auto;
@@ -576,35 +570,26 @@ th, td {
 .primary-content,
 .sidebar {
   /* At small screen sizes, all sections are full-width */
-  -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   /* fix for overflowing images in Firefox */
-  max-width: -webkit-fill-available;
   max-width: fill-available; }
 
 @media (min-width: 30rem) {
   .sidebar {
-    -ms-flex-preferred-size: 49%;
     flex-basis: 49%;
-    -ms-flex-positive: 1;
     flex-grow: 1; } }
 
 @media (min-width: 60rem) {
   .one-sidebar .primary-content {
     max-width: 75%;
-    -ms-flex-preferred-size: 75%;
     flex-basis: 75%; }
   .two-sidebars .primary-content {
     max-width: 50%;
-    -ms-flex-preferred-size: 50%;
     flex-basis: 50%; }
   .sidebar {
-    -ms-flex-positive: 0;
     flex-grow: 0;
-    -ms-flex-preferred-size: 24%;
     flex-basis: 24%; }
   .sidebar-left {
-    -ms-flex-order: -1;
     order: -1; } }
 
 /* Fallbacks for old brwosers, desktop only */
@@ -645,7 +630,6 @@ th, td {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: -ms-flexbox;
   display: flex; }
   [id="block-system-main-menu"] ul ul {
     display: none; }
@@ -665,29 +649,20 @@ th, td {
   padding-bottom: 3rem; }
 
 .site__banner {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-align: end;
   align-items: flex-end;
   padding: 1.5rem 0; }
 
 .site__logo {
   margin-right: 1.5rem;
-  -ms-flex: 0 12em;
   flex: 0 12em; }
 
 .site__branding {
-  -ms-flex: 1 24em;
   flex: 1 24em;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -ms-flex-align: baseline;
   align-items: baseline; }
 
 .site__name {
@@ -703,7 +678,6 @@ th, td {
   content: ' ';
   clear: both; }
 
-<<<<<<< HEAD
 .region-footer {
   display: grid;
   gap: 2rem; }
@@ -720,26 +694,6 @@ th, td {
 .time {
   text-align: center; }
 
-=======
-.region-footer .block {
-  padding: 0 0.5em; }
-
-@media (min-width: 40em) {
-  .region-footer {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: start;
-    align-items: flex-start; }
-    .region-footer .block {
-      float: left;
-      width: 280px;
-      -ms-flex: 1 0 280px;
-      flex: 1 0 280px; } }
-
-/* All blocks */
->>>>>>> 73927e6... Style highlighted block
 /* Recent content block */
 .block-node table {
   width: 100%; }
@@ -758,9 +712,9 @@ th, td {
   .block-node .node-author a {
     color: inherit; }
 
-/* Who's online, who's new,
-* Recent comments, Shortcuts*/
-.block ul {
+.block-menu ul,
+.view-staff ul,
+.view-tweets ul {
   list-style: none;
   padding-left: 0; }
 
@@ -776,14 +730,11 @@ th, td {
 
 /* User menu block */
 #block-system-user-menu {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
   justify-content: flex-end;
   background: #333; }
   #block-system-user-menu .menu {
     margin: 0;
-    display: -ms-inline-flexbox;
     display: inline-flex; }
   #block-system-user-menu li {
     margin-left: 1.5rem; }
@@ -791,15 +742,10 @@ th, td {
     color: #fff; }
 
 .highlighted {
-<<<<<<< HEAD
-  background-color: #ffffc9;
-  padding: 3rem 0; }
-=======
   max-width: 1200px;
   margin: 1.5rem auto;
   background-color: #ffffc9;
   padding: 3rem 3rem 1.5rem; }
->>>>>>> 73927e6... Style highlighted block
 
 [id="search-block-form"] {
   max-width: 32rem;
@@ -807,9 +753,7 @@ th, td {
 
 .search-form .container-inline,
 [id="search-block-form"] .container-inline {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: end;
   align-items: flex-end;
   margin-left: auto; }
 
@@ -818,7 +762,6 @@ th, td {
   margin-top: 0;
   margin-bottom: 0;
   margin-right: 0.25em;
-  -ms-flex: 1;
   flex: 1; }
 
 .node-article {
@@ -896,11 +839,8 @@ ul.tabs {
     background-color: #eee; }
 
 .team {
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: center;
   justify-content: center;
-  display: -ms-flexbox;
   display: flex; }
   .team:before, .team:after {
     display: table;
@@ -929,7 +869,6 @@ ul.tabs {
   width: 5em; }
 
 .review-list {
-  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   list-style: none;
@@ -946,11 +885,8 @@ ul.tabs {
   border: 1px solid; }
 
 .pager {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -ms-flex-pack: center;
   justify-content: center;
   text-align: center; }
   .pager a {

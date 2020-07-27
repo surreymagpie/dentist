@@ -29,9 +29,13 @@
   }
 }
 
-/* Who's online, who's new,
-* Recent comments, Shortcuts*/
-.block {
+// Remove list styling from:
+// Footer links
+// Staff view
+// Tweets block
+.block-menu,
+.view-staff,
+.view-tweets {
   ul {
     list-style: none;
     padding-left: 0;
@@ -73,13 +77,8 @@
   }
 }
 .highlighted {
-<<<<<<< HEAD
-  background-color: #ffffc9;
-  padding: 3rem 0;
-=======
   max-width: 1200px;
   margin: 1.5rem auto;
   background-color: #ffffc9;
   padding: 3rem 3rem 1.5rem;
->>>>>>> 73927e6... Style highlighted block
 }
