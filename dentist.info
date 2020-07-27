@@ -14,4 +14,4 @@ regions[sidebar_right] = Right Sidebar
 regions[footer] = Footer
 regions[page_bottom] = Page Bottom
 
-stylesheets[all][] = stylesheets/style.min.css
+stylesheets[all][] = stylesheets/style.css

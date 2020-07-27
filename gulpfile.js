@@ -1,9 +1,6 @@
 const { src, dest, series, watch } = require ('gulp');
 let sass = require('gulp-sass');
 sass.compiler = require ('node-sass');
-let shell = require('gulp-shell');
-let cssmin = require('gulp-cssmin');
-let rename = require('gulp-rename');
 let autoprefixer = require('gulp-autoprefixer');
 let browserSync = require('browser-sync').create();
 let source = {
@@ -15,39 +12,18 @@ let source = {
 
 function styles() {
     return src(source.scss)
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions', '> 1%'],
-            cascade: false
-        }))
-        .pipe(dest(source.css))
-        .pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(sass({outputStyle: "compressed" }).on('error', sass.logError))
+        .pipe(autoprefixer({ browsers: ['last 2 versions', '> 1%'] }))
         .pipe(dest(source.css))
         .pipe(browserSync.stream());
 };
 
-function serve(done) {
+function serve() {
     browserSync.init({
-        proxy: "d7.cornerhouse-dental.co.uk",
+        proxy: "http://localhost:8090",
     });
-    done;
-}
-function watch_files () {
-    watch(source.scss, 'styles');
-    watch([source.php, source.inc], series('theme', browserSync.reload));
+    watch(source.scss, styles);
 }
 
-function theme() {
-    shell.task('drush @local cc theme-registry');
-}
-
-function cssminify() {
-    return src('stylesheets/style.css')
-    .pipe(cssmin({keepSpecialComments: 0}))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(dest(source.css));
-}
-exports.default = series(styles, serve, watch_files);
-exports.css = styles
-exports.build = cssminify
+exports.default = series(styles, serve);
+exports.css = styles;
