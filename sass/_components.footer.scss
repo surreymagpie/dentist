@@ -1,13 +1,10 @@
 .region-footer {
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  column-gap: 2rem;
 
-  @media (min-width: 44rem) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 55em) {
-    grid-template-columns: auto auto 320px 1fr;
+  .block:nth-child(4) {
+    grid-column: 1 / -1;
   }
 }
 
