@@ -1,6 +1,6 @@
 {
   "name": "dentist",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Drupal theme for practice website",
   "main": "index.js",
   "scripts": {
