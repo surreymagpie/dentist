@@ -2,15 +2,14 @@
 
 Drupal theme for my practice website
 
-current version
-- v2.1.2
+Current version
+- v2.2.0
 
-CSS build requires nodeJS, npm and bower installed. Gulp should be installed globally by running `npm install -g gulp`
+CSS build requires NodeJS. Gulp and Yarn should be installed globally.
 
 Run
-
 ```
-    bower install
-    npm install
-    gulp
+    npm install -g gulp yarn
+    yarn                      # installs dependencies
+    gulp                      # build the CSS
 ```

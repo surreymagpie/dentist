@@ -13,7 +13,7 @@
 
 .article__metadata {
   @include clearfix;
-  margin-bottom: $base-spacing/2;
+  margin-bottom: calc($base-spacing/2);
   color: #000;
 }
 
