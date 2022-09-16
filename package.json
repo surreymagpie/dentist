@@ -1,10 +1,10 @@
 {
   "name": "dentist",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "Drupal theme for practice website",
   "main": "index.js",
   "scripts": {
-    "postinstall": "find node_modules/ -name \"*.info\" -type f -delete"
+    "postinstall": ""
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,20 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.54.9"
+  },
+  "dependencies": {
+    "@bower_components/inuit-box-sizing": "inuitcss/generic.box-sizing#~0.2.0",
+    "@bower_components/inuit-defaults": "inuitcss/settings.defaults#~0.2.3",
+    "@bower_components/inuit-functions": "inuitcss/tools.functions#~0.2.0",
+    "@bower_components/inuit-headings": "inuitcss/base.headings#~0.3.1",
+    "@bower_components/inuit-images": "inuitcss/base.images#~0.3.3",
+    "@bower_components/inuit-lists": "inuitcss/base.lists#~0.1.0",
+    "@bower_components/inuit-mixins": "inuitcss/tools.mixins#~0.2.3",
+    "@bower_components/inuit-normalize": "inuitcss/generic.normalize#~4.1.1",
+    "@bower_components/inuit-page": "inuitcss/base.page#~0.2.1",
+    "@bower_components/inuit-tables": "inuitcss/base.tables#~0.2.1"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
   }
 }
