@@ -36,6 +36,10 @@
     "@bower_components/inuit-page": "inuitcss/base.page#~0.2.1",
     "@bower_components/inuit-tables": "inuitcss/base.tables#~0.2.1"
   },
+  "browserslist": [
+    "defaults and supports es6-module",
+    "maintained node versions"
+  ],
   "engines": {
     "yarn": ">= 1.0.0"
   }

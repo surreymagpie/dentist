@@ -12,8 +12,8 @@ let source = {
 
 function styles() {
   return src(source.scss)
-    .pipe(sass({ outputStyle: "compressed" }).on('error', sass.logError))
-    .pipe(autoprefixer({ browsers: ['last 2 versions', '> 1%'] }))
+    .pipe(sass({ outputStyle: "compressed", quietDeps: true }).on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(dest(source.css))
     .pipe(browserSync.stream());
 };
