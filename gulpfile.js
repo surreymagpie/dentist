@@ -20,7 +20,7 @@ function styles() {
 
 function serve() {
   browserSync.init({
-    proxy: "http://drupal7.ddev.site",
+    proxy: "https://d7-cornerhouse.ddev.site"
   });
   watch(source.scss, styles);
 }
