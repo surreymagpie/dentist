@@ -3,7 +3,7 @@
 Drupal theme for my practice website
 
 Current version
-- v2.2.0
+- v2.2.1
 
 CSS build requires NodeJS. Gulp and Yarn should be installed globally.
 
