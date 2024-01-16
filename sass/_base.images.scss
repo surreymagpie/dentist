@@ -1,6 +1,11 @@
 img {
   height: auto;
-  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
 }
 
 // Don't fill container when sizes are set
