@@ -32,9 +32,9 @@
     "@bower_components/inuit-images": "inuitcss/base.images#~0.3.3",
     "@bower_components/inuit-lists": "inuitcss/base.lists#~0.1.0",
     "@bower_components/inuit-mixins": "inuitcss/tools.mixins#~0.2.3",
-    "@bower_components/inuit-normalize": "inuitcss/generic.normalize#~4.1.1",
     "@bower_components/inuit-page": "inuitcss/base.page#~0.2.1",
-    "@bower_components/inuit-tables": "inuitcss/base.tables#~0.2.1"
+    "@bower_components/inuit-tables": "inuitcss/base.tables#~0.2.1",
+    "normalize.css": "^8.0.1"
   },
   "browserslist": [
     "defaults and supports es6-module",
